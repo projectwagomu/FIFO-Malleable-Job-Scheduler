@@ -15,13 +15,19 @@ public class ScriptManager extends Thread {
   }
 
   public void run() {
+    Queue<String> availableHosts = new ArrayDeque<>();
+    for (int i = 0; i < 10; i++) {
+      // piccolo00 ~ piccolo09
+      availableHosts.add(String.format("piccolo%02d", i));
+    }
+
     while (true) {
       try {
         Thread.sleep(5000);
         if (jobQueue.size() > 0) {
           System.out.println("job queue = " + jobQueue); 
-          String script = jobQueue.poll();
-          ScriptExecutor executor = new ScriptExecutor(script);
+          JobInfo jobInfo = new JobInfo(jobQueue.poll());
+          ScriptExecutor executor = new ScriptExecutor(jobInfo.getScript(), availableHosts.poll());
           executor.start();
         } else {
           System.out.println("job queue = " + jobQueue);
