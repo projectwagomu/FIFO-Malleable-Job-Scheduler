@@ -1,9 +1,5 @@
 package scheduler;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -12,6 +8,10 @@ public class ScriptManager extends Thread {
 
   public ScriptManager(Queue<String> jobQueue) {
     this.jobQueue = jobQueue;
+  }
+
+  private void printJobQueue() {
+    System.out.println("job queue : " + this.jobQueue);
   }
 
   public void run() {
@@ -25,12 +25,14 @@ public class ScriptManager extends Thread {
       try {
         Thread.sleep(5000);
         if (jobQueue.size() > 0) {
-          System.out.println("job queue = " + jobQueue); 
-          JobInfo jobInfo = new JobInfo(jobQueue.poll());
-          ScriptExecutor executor = new ScriptExecutor(jobInfo.getScript(), availableHosts.poll());
-          executor.start();
+          printJobQueue();
+          Job job = new Job(jobQueue.poll(), availableHosts);
+          while (job.getMaxNodes() > availableHosts.size()) {
+            Thread.sleep(5000);
+          }
+          job.start();
         } else {
-          System.out.println("job queue = " + jobQueue);
+          printJobQueue();
         }
       } catch (InterruptedException e) {
         e.printStackTrace();
