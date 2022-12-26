@@ -27,7 +27,8 @@ public class ScriptManager extends Thread {
         if (jobQueue.size() > 0) {
           printJobQueue();
           Job job = new Job(jobQueue.poll(), availableHosts);
-          while (job.getMaxNodes() > availableHosts.size()) {
+          while (!job.isExecutable()) {
+            System.out.println("waiting...");
             Thread.sleep(5000);
           }
           job.start();

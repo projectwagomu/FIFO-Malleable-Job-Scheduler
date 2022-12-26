@@ -46,6 +46,10 @@ public class Job extends Thread {
         // System.out.println("maxNodes: " + this.maxNodes);
     }
 
+    public boolean isExecutable() {
+        return this.maxNodes < this.availableHosts.size();
+    }
+
     public void run() {
         Pattern p = Pattern.compile("(.*)/");
         Matcher m = p.matcher(this.scriptPath);
@@ -104,7 +108,4 @@ public class Job extends Thread {
         file.delete();
     }
 
-    public int getMaxNodes() {
-        return this.maxNodes;
-    }
 }
