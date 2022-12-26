@@ -4,14 +4,9 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class ScriptManager extends Thread {
-  Queue<String> jobQueue;
 
-  public ScriptManager(Queue<String> jobQueue) {
-    this.jobQueue = jobQueue;
-  }
+  public ScriptManager() {
 
-  private void printJobQueue() {
-    System.out.println("job queue : " + this.jobQueue);
   }
 
   public void run() {
@@ -24,16 +19,16 @@ public class ScriptManager extends Thread {
     while (true) {
       try {
         Thread.sleep(5000);
-        if (jobQueue.size() > 0) {
-          printJobQueue();
-          Job job = new Job(jobQueue.poll(), availableHosts);
+        if (Scheduler.jobQueue.size() > 0) {
+          System.out.println("job queue : " + Scheduler.jobQueue);
+          Job job = new Job(Scheduler.jobQueue.poll(), availableHosts);
           while (!job.isExecutable()) {
             System.out.println("waiting...");
             Thread.sleep(5000);
           }
           job.start();
         } else {
-          printJobQueue();
+          System.out.println("job queue : " + Scheduler.jobQueue);
         }
       } catch (InterruptedException e) {
         e.printStackTrace();
