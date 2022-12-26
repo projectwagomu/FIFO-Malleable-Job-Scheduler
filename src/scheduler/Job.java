@@ -47,7 +47,7 @@ public class Job extends Thread {
     }
 
     public boolean isExecutable() {
-        return this.maxNodes < this.availableHosts.size();
+        return this.minNodes <= this.availableHosts.size();
     }
 
     public void run() {
@@ -60,8 +60,12 @@ public class Job extends Thread {
         // System.out.println("scriptDir:" + scriptDir);
         System.out.println("available hosts: " + this.availableHosts);
         System.out.println("run " + this.scriptPath);
+        int numHost = this.maxNodes;
+        while(numHost > this.availableHosts.size()) {
+            numHost--;
+        }
         List<String> hosts = new ArrayList<>();
-        for (int i = 0; i < this.maxNodes; i++) {
+        for (int i = 0; i < numHost; i++) {
             hosts.add(availableHosts.poll());
         }
         System.out.println("using hosts: " + hosts);
@@ -81,7 +85,7 @@ public class Job extends Thread {
         String[] cmd = {
             "ssh",
             hosts.get(0),
-            "NODES=" + this.maxNodes,
+            "NODES=" + numHost,
             "NODE_FILE=" + file,
             "SCRIPT_DIR=" + scriptDir,
             this.scriptPath,
