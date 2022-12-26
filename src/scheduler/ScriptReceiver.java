@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class ScriptReceiver extends Thread {
@@ -22,8 +21,9 @@ public class ScriptReceiver extends Thread {
         Socket clientSocket = serverSocket.accept();
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-        jobQueue.add(in.readLine());
-        out.println("accepted.");
+        String script = in.readLine();
+        jobQueue.add(script);
+        out.println(script + " received.");
       }
     } catch (Exception e) {
       e.printStackTrace();
