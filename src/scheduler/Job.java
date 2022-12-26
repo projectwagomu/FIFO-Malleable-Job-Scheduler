@@ -89,6 +89,7 @@ public class Job extends Thread {
         };
         try {
             Process process = Runtime.getRuntime().exec(cmd);
+            ScriptManager.runningJobs.add(this.scriptPath);
             BufferedReader reader = new BufferedReader(new
                 InputStreamReader(process.getInputStream()));
             StringBuilder output = new StringBuilder();
@@ -101,6 +102,7 @@ public class Job extends Thread {
             writer.print(output.toString());
             writer.close();
             System.out.println("Done: " + scriptPath);
+            ScriptManager.runningJobs.remove(this.scriptPath); 
         } catch (IOException e) {
             e.printStackTrace();
         }
