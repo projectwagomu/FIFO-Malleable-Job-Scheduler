@@ -8,10 +8,6 @@ import java.net.Socket;
 
 public class ScriptReceiver extends Thread {
 
-  public ScriptReceiver() {
-
-  }
-
   public void run() {
     try {
       ServerSocket serverSocket = new ServerSocket(8080);
@@ -27,4 +23,5 @@ public class ScriptReceiver extends Thread {
       e.printStackTrace();
     }
   }
+  
 }

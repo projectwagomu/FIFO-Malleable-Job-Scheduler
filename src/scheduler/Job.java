@@ -8,21 +8,18 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Job extends Thread {
     private String scriptPath;
-    private Queue<String> availableHosts;
     private String jobType;
     private String jobClass;
     private int minNodes;
     private int maxNodes;
 
-    public Job(String path, Queue<String> hosts) {
+    public Job(String path) {
         this.scriptPath = path;
-        this.availableHosts = hosts;
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
             for (int i=0; i<5; i++) {
@@ -47,7 +44,7 @@ public class Job extends Thread {
     }
 
     public boolean isExecutable() {
-        return this.minNodes <= this.availableHosts.size();
+        return this.minNodes <= ScriptManager.availableHosts.size();
     }
 
     public void run() {
@@ -58,18 +55,18 @@ public class Job extends Thread {
             scriptDir = m.group(1);
         }
         // System.out.println("scriptDir:" + scriptDir);
-        System.out.println("available hosts: " + this.availableHosts);
+        System.out.println("available hosts: " + ScriptManager.availableHosts);
         System.out.println("run " + this.scriptPath);
         int numHost = this.maxNodes;
-        while(numHost > this.availableHosts.size()) {
+        while(numHost > ScriptManager.availableHosts.size()) {
             numHost--;
         }
         List<String> hosts = new ArrayList<>();
         for (int i = 0; i < numHost; i++) {
-            hosts.add(availableHosts.poll());
+            hosts.add(ScriptManager.availableHosts.poll());
         }
         System.out.println("using hosts: " + hosts);
-        System.out.println("available hosts: " + this.availableHosts); 
+        System.out.println("available hosts: " + ScriptManager.availableHosts); 
         String nodeFile = "nodeFile";
         File file = new File(scriptDir + "/" + nodeFile);
         try {
@@ -107,8 +104,8 @@ public class Job extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        hosts.forEach(h -> this.availableHosts.add(h));
-        System.out.println("available hosts: " + this.availableHosts);
+        hosts.forEach(h -> ScriptManager.availableHosts.add(h));
+        System.out.println("available hosts: " + ScriptManager.availableHosts);
         file.delete();
     }
 
