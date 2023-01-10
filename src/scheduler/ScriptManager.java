@@ -8,7 +8,7 @@ import java.util.Queue;
 public class ScriptManager extends Thread {
 
   public static Queue<String> availableHosts = new ArrayDeque<>();
-  public static List<String> runningJobs = new ArrayList<>();
+  public static List<Job> runningJobs = new ArrayList<>();
   static {
     for (int i = 0; i < 10; i++) {
       // piccolo00 ~ piccolo09

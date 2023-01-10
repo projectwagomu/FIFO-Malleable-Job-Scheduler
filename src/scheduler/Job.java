@@ -41,10 +41,6 @@ public class Job extends Thread {
             this.minNodes++;
             this.maxNodes++;
         }
-        // System.out.println("jobType: " + this.jobType);
-        // System.out.println("jobClass: " + this.jobClass);
-        // System.out.println("minNodes: " + this.minNodes);
-        // System.out.println("maxNodes: " + this.maxNodes);
     }
 
     public boolean isExecutable() {
@@ -100,7 +96,7 @@ public class Job extends Thread {
         };
         try {
             Process process = Runtime.getRuntime().exec(cmd);
-            ScriptManager.runningJobs.add(this.scriptPath);
+            ScriptManager.runningJobs.add(this);
             BufferedReader reader = new BufferedReader(new
                 InputStreamReader(process.getInputStream()));
             StringBuilder output = new StringBuilder();
@@ -113,13 +109,18 @@ public class Job extends Thread {
             writer.print(output.toString());
             writer.close();
             System.out.println("Done: " + scriptPath);
-            ScriptManager.runningJobs.remove(this.scriptPath); 
+            ScriptManager.runningJobs.remove(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
         hosts.forEach(h -> ScriptManager.availableHosts.add(h));
         System.out.println("available hosts: " + ScriptManager.availableHosts);
         file.delete();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s", scriptPath);
     }
 
 }
