@@ -37,6 +37,10 @@ public class Job extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        if (this.jobType.equals("charm")) {
+            this.minNodes++;
+            this.maxNodes++;
+        }
         // System.out.println("jobType: " + this.jobType);
         // System.out.println("jobClass: " + this.jobClass);
         // System.out.println("minNodes: " + this.minNodes);
@@ -74,7 +78,14 @@ public class Job extends Thread {
                 file.createNewFile();
             }
             PrintWriter pw = new PrintWriter(file);
-            hosts.forEach(h -> pw.println(h + " slots=1")); 
+            if (this.jobType.equals("mpi")) {
+                hosts.forEach(h -> pw.println(h + " slots=1")); 
+            } else if (this.jobType.equals("charm")) {
+                hosts.forEach(h -> {
+                    if (h.equals(hosts.get(0))) return;
+                    pw.println("host " + h);
+                }); 
+            }
             pw.close();
         } catch (IOException e) {
             e.printStackTrace();
