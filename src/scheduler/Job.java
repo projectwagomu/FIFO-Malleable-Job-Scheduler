@@ -7,14 +7,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.net.Socket;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Job extends Thread {
-    private String scriptPath;
-    private String scriptDir;
+    private Path scriptPath;
+    private Path scriptDir;
     private String jobType;
     public String jobClass;
     public int minNodes;
@@ -22,14 +21,10 @@ public class Job extends Thread {
     public int numHost;
     public List<String> usingHosts;
 
-    public Job(String path) {
+    public Job(Path path) {
         this.scriptPath = path;
-        Pattern p = Pattern.compile("(.*)/");
-        Matcher m = p.matcher(this.scriptPath);
-        if (m.find()) {
-            this.scriptDir = m.group(1);
-        }
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+        this.scriptDir = path.getParent();
+        try (BufferedReader reader = new BufferedReader(new FileReader(path.toString()))) {
             String line;
             for (int i=0; i<5; i++) {
                 line = reader.readLine();
@@ -172,7 +167,7 @@ public class Job extends Thread {
             "NODES=" + nodes,
             "NODE_FILE=" + file,
             "SCRIPT_DIR=" + this.scriptDir,
-            this.scriptPath,
+            this.scriptPath.toString(),
         };
         try {
             Process process = Runtime.getRuntime().exec(cmd);
