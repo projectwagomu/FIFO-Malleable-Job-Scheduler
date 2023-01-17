@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.net.Socket;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -13,13 +14,21 @@ import java.util.regex.Pattern;
 
 public class Job extends Thread {
     private String scriptPath;
+    private String scriptDir;
     private String jobType;
-    private String jobClass;
-    private int minNodes;
-    private int maxNodes;
+    public String jobClass;
+    public int minNodes;
+    public int maxNodes;
+    public int numHost;
+    public List<String> usingHosts;
 
     public Job(String path) {
         this.scriptPath = path;
+        Pattern p = Pattern.compile("(.*)/");
+        Matcher m = p.matcher(this.scriptPath);
+        if (m.find()) {
+            this.scriptDir = m.group(1);
+        }
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
             for (int i=0; i<5; i++) {
@@ -47,38 +56,108 @@ public class Job extends Thread {
         return this.minNodes <= ScriptManager.availableHosts.size();
     }
 
-    public void run() {
-        Pattern p = Pattern.compile("(.*)/");
-        Matcher m = p.matcher(this.scriptPath);
-        String scriptDir = null;
-        if (m.find()) {
-            scriptDir = m.group(1);
+    public void shrink(int decreasedNum) {
+        List<String> unusedHosts = new ArrayList<>();
+        for (int i = 0; i < decreasedNum; i++) {
+            unusedHosts.add(usingHosts.get(usingHosts.size()-1 - i));
         }
-        // System.out.println("scriptDir:" + scriptDir);
+        this.usingHosts.subList(this.usingHosts.size()-decreasedNum, this.usingHosts.size()).clear();
+        String nodeFile = "nodeFile";
+        File file = new File(this.scriptDir + "/" + nodeFile);
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            PrintWriter pw = new PrintWriter(file);
+                this.usingHosts.forEach(h -> {
+                    if (h.equals(this.usingHosts.get(0))) return;
+                    pw.println("host " + h);
+                });
+            pw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Socket socket = new Socket("localhost", 8081);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            out.println(this.jobClass + " " + this.usingHosts.get(0) + " " + (this.numHost - 1) + " " + (this.numHost - 1 - decreasedNum));
+            String response = in.readLine();
+            if (response.equals("ok")) {
+                System.out.println("shrink : " + this.scriptPath);
+            }
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        this.numHost = usingHosts.size();
+        unusedHosts.forEach(h -> ScriptManager.availableHosts.add(h));
+    }
+
+    public void expand(int increasedNum) {
+        for (int i=0; i<increasedNum; i++) {
+            this.usingHosts.add(ScriptManager.availableHosts.poll());
+        }
+        String nodeFile = "nodeFile";
+        File file = new File(this.scriptDir + "/" + nodeFile);
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            PrintWriter pw = new PrintWriter(file);
+                this.usingHosts.forEach(h -> {
+                    if (h.equals(this.usingHosts.get(0))) return;
+                    pw.println("host " + h);
+                });
+            pw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Socket socket = new Socket("localhost", 8081);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            out.println(this.jobClass + " " + this.usingHosts.get(0) + " " + (this.numHost - 1) + " " + (this.numHost - 1 + increasedNum));
+            String response = in.readLine();
+            if (response.equals("ok")) {
+                System.out.println("expand : " + this.scriptPath);
+            }
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        this.numHost = usingHosts.size();
+    }
+
+    public void run() {
         System.out.println("available hosts: " + ScriptManager.availableHosts);
         System.out.println("run " + this.scriptPath);
-        int numHost = this.maxNodes;
-        while(numHost > ScriptManager.availableHosts.size()) {
-            numHost--;
+        this.numHost = this.maxNodes;
+        while(this.numHost > ScriptManager.availableHosts.size()) {
+            this.numHost--;
         }
-        List<String> hosts = new ArrayList<>();
-        for (int i = 0; i < numHost; i++) {
-            hosts.add(ScriptManager.availableHosts.poll());
+        this.usingHosts = new ArrayList<>();
+        for (int i = 0; i < this.numHost; i++) {
+            this.usingHosts.add(ScriptManager.availableHosts.poll());
         }
-        System.out.println("using hosts: " + hosts);
+        System.out.println("using hosts: " + this.usingHosts);
         System.out.println("available hosts: " + ScriptManager.availableHosts); 
         String nodeFile = "nodeFile";
-        File file = new File(scriptDir + "/" + nodeFile);
+        File file = new File(this.scriptDir + "/" + nodeFile);
         try {
             if (!file.exists()) {
                 file.createNewFile();
             }
             PrintWriter pw = new PrintWriter(file);
             if (this.jobType.equals("mpi")) {
-                hosts.forEach(h -> pw.println(h + " slots=1")); 
+                this.usingHosts.forEach(h -> pw.println(h + " slots=1")); 
             } else if (this.jobType.equals("charm")) {
-                hosts.forEach(h -> {
-                    if (h.equals(hosts.get(0))) return;
+                this.usingHosts.forEach(h -> {
+                    if (h.equals(this.usingHosts.get(0))) return;
                     pw.println("host " + h);
                 }); 
             }
@@ -86,12 +165,13 @@ public class Job extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        int nodes = this.jobType.equals("charm") ? (this.numHost-1) : this.numHost;
         String[] cmd = {
             "ssh",
-            hosts.get(0),
-            "NODES=" + numHost,
+            this.usingHosts.get(0),
+            "NODES=" + nodes,
             "NODE_FILE=" + file,
-            "SCRIPT_DIR=" + scriptDir,
+            "SCRIPT_DIR=" + this.scriptDir,
             this.scriptPath,
         };
         try {
@@ -105,7 +185,7 @@ public class Job extends Thread {
               output.append(line + "\n");
             }
             reader.close();
-            PrintWriter writer = new PrintWriter(scriptDir + "/result.txt");
+            PrintWriter writer = new PrintWriter(this.scriptDir + "/result.txt");
             writer.print(output.toString());
             writer.close();
             System.out.println("Done: " + scriptPath);
@@ -113,7 +193,7 @@ public class Job extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        hosts.forEach(h -> ScriptManager.availableHosts.add(h));
+        this.usingHosts.forEach(h -> ScriptManager.availableHosts.add(h));
         System.out.println("available hosts: " + ScriptManager.availableHosts);
         file.delete();
     }
