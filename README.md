@@ -1,5 +1,7 @@
 Dummy Scheduler
 
 ```shell
-$ ant
+scheduler $ ant
+middlelayer $ ant
+scheduler/examples $ ./submit.sh
 ```
