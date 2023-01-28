@@ -56,26 +56,7 @@ public class Job extends Thread {
         for (String h : this.usingHosts) {
             currentHosts.add(h);
         };
-        // List<String> unusedHosts = new ArrayList<>();
-        // for (int i = 0; i < decreasedNum; i++) {
-        //     unusedHosts.add(usingHosts.get(usingHosts.size()-1 - i));
-        // }
         this.usingHosts.subList(this.usingHosts.size()-decreasedNum, this.usingHosts.size()).clear();
-        // String nodeFile = "nodeFile";
-        // File file = new File(this.scriptDir + "/" + nodeFile);
-        // try {
-        //     if (!file.exists()) {
-        //         file.createNewFile();
-        //     }
-        //     PrintWriter pw = new PrintWriter(file);
-        //         this.usingHosts.forEach(h -> {
-        //             if (h.equals(this.usingHosts.get(0))) return;
-        //             pw.println("host " + h);
-        //         });
-        //     pw.close();
-        // } catch (IOException e) {
-        //     e.printStackTrace();
-        // }
         String[] unusedHosts = new String[decreasedNum];
 
         try {
@@ -83,7 +64,6 @@ public class Job extends Thread {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println(this.scriptDir + ":" + "shrink" + ":" + this.jobType + ":" + currentHosts.toString() + ":" + String.valueOf(decreasedNum));
-            // out.println(this.jobType + " " + this.usingHosts.get(0) + " " + (this.numHost - 1) + " " + (this.numHost - 1 - decreasedNum));
             unusedHosts = in.readLine().replaceAll("[\\[\\]\\s]", "").split(","); 
             String response = in.readLine();
             if (response.equals("ok")) {
@@ -100,7 +80,6 @@ public class Job extends Thread {
         }
 
         this.numHost = usingHosts.size();
-        // unusedHosts.forEach(h -> ScriptManager.availableHosts.add(h));
     }
 
     public void expand(int increasedNum) {
@@ -135,7 +114,6 @@ public class Job extends Thread {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println(this.scriptDir + ":" + "expand" + ":" + this.jobType + ":" + currentHosts.toString() + ":" + newHosts.toString());
-            // out.println(this.jobType + " " + this.usingHosts.get(0) + " " + (this.numHost - 1) + " " + (this.numHost - 1 + increasedNum));
             String response = in.readLine();
             if (response.equals("ok")) {
                 System.out.println("expand : " + this.scriptPath);
