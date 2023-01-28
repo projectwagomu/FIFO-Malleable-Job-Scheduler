@@ -10,7 +10,7 @@ public class ScriptManager extends Thread {
   public static Queue<String> availableHosts = new ArrayDeque<>();
   public static List<Job> runningJobs = new ArrayList<>();
   static {
-    for (int i = 4; i < 8; i++) {
+    for (int i = 4; i < 9; i++) {
       // piccolo00 ~ piccolo09
       availableHosts.add(String.format("piccolo%02d", i));
     }

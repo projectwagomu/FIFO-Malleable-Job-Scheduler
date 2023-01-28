@@ -1,3 +1,6 @@
-build/
-lib/
-examples/
+scheduler/build/
+scheduler/lib/
+scheduler/examples/
+middlelayer/build/
+middlelayer/shrink_expand/
+
