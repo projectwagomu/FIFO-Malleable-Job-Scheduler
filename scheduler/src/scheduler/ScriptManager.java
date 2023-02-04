@@ -10,8 +10,8 @@ public class ScriptManager extends Thread {
   public static Queue<String> availableHosts = new ArrayDeque<>();
   public static List<Job> runningJobs = new ArrayList<>();
   static {
-    for (int i = 4; i < 9; i++) {
-      // piccolo00 ~ piccolo09
+    for (int i = 0; i < 4; i++) {
+      // piccolo00 ~ piccolo11
       availableHosts.add(String.format("piccolo%02d", i));
     }
   }
@@ -22,13 +22,19 @@ public class ScriptManager extends Thread {
         Thread.sleep(5000);
         System.out.println("running jobs: " + runningJobs);
         if (Scheduler.jobQueue.size() > 0) {
-          System.out.println("job queue : " + Scheduler.jobQueue);
-          Job job = new Job(Scheduler.jobQueue.poll());
+          System.out.println("job queue: " + Scheduler.jobQueue);
+          Job job = Scheduler.jobQueue.poll();
           while (!job.isExecutable()) {
-            if (shrinkJobs(job.minNodes - availableHosts.size())) {
-              break;
+            int releasableHosts = 0;
+            for (Job j : runningJobs) {
+              if (!j.jobClass.equals("malleable")) {
+                continue;
+              }
+              releasableHosts += j.numHost - j.minNodes;
             }
-            System.out.println("waiting...");
+            if (releasableHosts >= job.minNodes - availableHosts.size()) {
+              shrinkJobs(releasableHosts);
+            }
             Thread.sleep(5000);
           }
           job.start();
@@ -36,7 +42,7 @@ public class ScriptManager extends Thread {
           if (availableHosts.size() > 0) {
             expandJobs();
           }
-          System.out.println("job queue : " + Scheduler.jobQueue);
+          System.out.println("job queue: " + Scheduler.jobQueue);
         }
       } catch (InterruptedException e) {
         e.printStackTrace();
@@ -44,43 +50,28 @@ public class ScriptManager extends Thread {
     }
   }
 
-  private boolean shrinkJobs(int requiredHosts) {
-    List<Job> malleableJobs = new ArrayList<>();
+  private void shrinkJobs(int requiredHosts) {
     for (Job j : runningJobs) {
-      if (j.jobClass.equals("malleable")) {
-        malleableJobs.add(j);
+      if (!j.jobClass.equals("malleable")) {
+        continue;
       }
-    }
-    int emptyHosts = 0;
-    for (Job j : malleableJobs) {
-      emptyHosts += j.numHost - j.minNodes;
-    }
-    if (requiredHosts > emptyHosts) {
-      // 実行中のmalleableジョブを縮小しても次のジョブを実行できない場合，なにもしない．
-      return false;
-    } else {
-      for (Job j : malleableJobs) {
-        j.shrink(Math.min(requiredHosts, j.numHost-j.minNodes));
-        requiredHosts -= j.numHost - j.minNodes;
-        if (requiredHosts <= 0) {
-          break;
-        }
+      j.shrink(Math.min(requiredHosts, j.numHost-j.minNodes));
+      requiredHosts -= j.numHost - j.minNodes;
+      if (requiredHosts <= 0) {
+        break;
       }
-      return true;
     }
   }
 
   private void expandJobs() {
-    List<Job> malleableJobs = new ArrayList<>();
     for (Job j : runningJobs) {
-      if (j.jobClass.equals("malleable")) {
-        malleableJobs.add(j);
+      if (!j.jobClass.equals("malleable")) {
+        continue;
       }
-    }
-    for (Job j : malleableJobs) {
       if (j.numHost < j.maxNodes && availableHosts.size() > 0) {
         j.expand(Math.min(j.maxNodes - j.numHost, availableHosts.size()));
       }
     }
   }
+
 }

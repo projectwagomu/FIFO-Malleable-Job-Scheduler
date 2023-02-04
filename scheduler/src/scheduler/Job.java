@@ -128,7 +128,7 @@ public class Job extends Thread {
 
     public void run() {
         System.out.println("available hosts: " + ScriptManager.availableHosts);
-        System.out.println("run " + this.scriptPath);
+        System.out.println("run " + this);
         this.numHost = this.maxNodes;
         while(this.numHost > ScriptManager.availableHosts.size()) {
             this.numHost--;
@@ -183,7 +183,7 @@ public class Job extends Thread {
             PrintWriter writer = new PrintWriter(this.scriptDir + "/result.txt");
             writer.print(output.toString());
             writer.close();
-            System.out.println("Done: " + scriptPath);
+            System.out.println("Done: " + this);
             ScriptManager.runningJobs.remove(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -195,7 +195,7 @@ public class Job extends Thread {
 
     @Override
     public String toString() {
-        return String.format("%s", scriptPath);
+        return String.format("%s", scriptDir.getFileName());
     }
 
 }
