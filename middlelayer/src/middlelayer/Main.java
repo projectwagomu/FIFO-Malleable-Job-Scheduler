@@ -18,19 +18,24 @@ public class Main {
         Socket clientSocket = serverSocket.accept();
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-        String[] jobInfo = in.readLine().split(":");
-        for (String s : jobInfo) {
-          System.out.println(s);
+        String[] params = in.readLine().split(":");
+        for (String p : params) {
+          System.out.println(p);
         }
-        if (jobInfo[1].equals("expand")) {
-          String[] currentHosts = jobInfo[3].replaceAll("[\\[\\]\\s]", "").split(","); 
-          String[] newHosts = jobInfo[4].replaceAll("[\\[\\]\\s]", "").split(",");
+        String scriptDir = params[0];
+        String operation = params[1];
+        String jobType = params[2];
+        String[] currentHosts = params[3].replaceAll("[\\[\\]\\s]", "").split(",");
+        int decreasedNum = 0;
+        String[] newHosts = null;
+        if (operation.equals("expand")) {
+          newHosts = params[4].replaceAll("[\\[\\]\\s]", "").split(",");
           ProcessBuilder builder;
-          if (jobInfo[2].equals("apgas")) {
+          if (jobType.equals("apgas")) {
             builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp /home/takaoka/scheduler/middlelayer/shrink_expand/apgas/ Client expand", String.valueOf(newHosts.length), String.join(" ", newHosts));
           } else {
             String nodeFile = "nodeFile";
-            File file = new File(jobInfo[0] + "/" + nodeFile);
+            File file = new File(scriptDir + "/" + nodeFile);
             try {
               if (!file.exists()) {
                 file.createNewFile();
@@ -58,10 +63,9 @@ public class Main {
           }
           process.waitFor();
           out.println("success");
-        } else if (jobInfo[1].equals("shrink")) {
-          String[] currentHosts = jobInfo[3].replaceAll("[\\[\\]\\s]", "").split(","); 
-          int decreasedNum = Integer.parseInt(jobInfo[4]);
-          if (jobInfo[2].equals("apgas")) {
+        } else if (operation.equals("shrink")) {
+          decreasedNum = Integer.parseInt(params[4]);
+          if (jobType.equals("apgas")) {
             List<String> unusedHosts = new ArrayList<>();
             ProcessBuilder builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp /home/takaoka/scheduler/middlelayer/shrink_expand/apgas/ Client shrink", String.valueOf(decreasedNum));
             Process process = builder.start();
@@ -75,13 +79,13 @@ public class Main {
             process.waitFor();
             out.println(unusedHosts.toString());
             out.println("success");
-          } else if (jobInfo[2].equals("charm")) {
+          } else if (jobType.equals("charm")) {
             List<String> unusedHosts = new ArrayList<>();
             for (int i = 0; i < decreasedNum; i++) {
               unusedHosts.add(currentHosts[currentHosts.length-1 - i]);
             }
             String nodeFile = "nodeFile";
-            File file = new File(jobInfo[0] + "/" + nodeFile);
+            File file = new File(scriptDir + "/" + nodeFile);
             try {
               if (!file.exists()) {
                 file.createNewFile();
