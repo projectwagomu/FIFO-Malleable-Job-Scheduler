@@ -29,6 +29,24 @@ public class Main {
           if (jobInfo[2].equals("apgas")) {
             builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp /home/takaoka/scheduler/middlelayer/shrink_expand/apgas/ Client expand", String.valueOf(newHosts.length), String.join(" ", newHosts));
           } else {
+            String nodeFile = "nodeFile";
+            File file = new File(jobInfo[0] + "/" + nodeFile);
+            try {
+              if (!file.exists()) {
+                file.createNewFile();
+              }
+              PrintWriter pw = new PrintWriter(file);
+              for (int i=0; i<currentHosts.length; i++) {
+                if (i==0) continue;
+                pw.println("host " + currentHosts[i]);
+              }
+              for (int i=0; i<newHosts.length; i++) {
+                pw.println("host " + newHosts[i]);
+              }
+              pw.close();
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
             builder = new ProcessBuilder("/home/takaoka/scheduler/middlelayer/shrink_expand/charm/client", currentHosts[0], "1234", String.valueOf(currentHosts.length-1), String.valueOf(currentHosts.length-1+newHosts.length));
           }
           Process process = builder.start();
@@ -39,7 +57,7 @@ public class Main {
             System.out.println(line);
           }
           process.waitFor();
-          out.println("ok");
+          out.println("success");
         } else if (jobInfo[1].equals("shrink")) {
           String[] currentHosts = jobInfo[3].replaceAll("[\\[\\]\\s]", "").split(","); 
           int decreasedNum = Integer.parseInt(jobInfo[4]);
@@ -69,7 +87,7 @@ public class Main {
                 file.createNewFile();
               }
               PrintWriter pw = new PrintWriter(file);
-              for (int i=0; i<currentHosts.length; i++) {
+              for (int i=0; i<currentHosts.length-unusedHosts.size(); i++) {
                 if (i==0) continue;
                 pw.println("host " + currentHosts[i]);
               }

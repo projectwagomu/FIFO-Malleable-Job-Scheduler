@@ -93,21 +93,6 @@ public class Job extends Thread {
             this.usingHosts.add(h);
             newHosts.add(h);
         }
-        String nodeFile = "nodeFile";
-        File file = new File(this.scriptDir + "/" + nodeFile);
-        try {
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-            PrintWriter pw = new PrintWriter(file);
-                this.usingHosts.forEach(h -> {
-                    if (h.equals(this.usingHosts.get(0))) return;
-                    pw.println("host " + h);
-                });
-            pw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         try {
             Socket socket = new Socket("localhost", 8081);
@@ -115,8 +100,8 @@ public class Job extends Thread {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println(this.scriptDir + ":" + "expand" + ":" + this.jobType + ":" + currentHosts.toString() + ":" + newHosts.toString());
             String response = in.readLine();
-            if (response.equals("ok")) {
-                System.out.println("expand : " + this.scriptPath);
+            if (response.equals("success")) {
+                System.out.println("expand : " + this);
             }
             socket.close();
         } catch (Exception e) {
