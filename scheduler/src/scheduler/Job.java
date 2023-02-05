@@ -66,8 +66,8 @@ public class Job extends Thread {
             out.println(this.scriptDir + ":" + "shrink" + ":" + this.jobType + ":" + currentHosts.toString() + ":" + String.valueOf(decreasedNum));
             unusedHosts = in.readLine().replaceAll("[\\[\\]\\s]", "").split(","); 
             String response = in.readLine();
-            if (response.equals("ok")) {
-                System.out.println("shrink : " + this.scriptPath);
+            if (response.equals("success")) {
+                System.out.println("shrink : " + this);
             }
             socket.close();
         } catch (Exception e) {

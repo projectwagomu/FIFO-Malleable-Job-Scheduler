@@ -74,7 +74,7 @@ public class Main {
             }
             process.waitFor();
             out.println(unusedHosts.toString());
-            out.println("ok");
+            out.println("success");
           } else if (jobInfo[2].equals("charm")) {
             List<String> unusedHosts = new ArrayList<>();
             for (int i = 0; i < decreasedNum; i++) {
@@ -105,7 +105,7 @@ public class Main {
             }
             process.waitFor();
             out.println(unusedHosts.toString());
-            out.println("ok");
+            out.println("success");
           }
         }
       }
