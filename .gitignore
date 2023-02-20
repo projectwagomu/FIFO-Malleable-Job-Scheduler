@@ -1,6 +1,7 @@
 scheduler/build/
 scheduler/lib/
-scheduler/examples/
+scheduler/examples/*
+!/scheduler/examples/Qsub.java
 middlelayer/build/
 middlelayer/shrink_expand/
 
