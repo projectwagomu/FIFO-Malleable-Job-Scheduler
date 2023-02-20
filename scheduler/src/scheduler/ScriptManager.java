@@ -10,7 +10,7 @@ public class ScriptManager extends Thread {
   public static Queue<String> availableHosts = new ArrayDeque<>();
   public static List<Job> runningJobs = new ArrayList<>();
   static {
-    for (int i = 4; i < 8; i++) {
+    for (int i = 0; i < 12; i++) {
       // piccolo00 ~ piccolo11
       availableHosts.add(String.format("piccolo%02d", i));
     }
@@ -55,8 +55,10 @@ public class ScriptManager extends Thread {
       if (!j.jobClass.equals("malleable")) {
         continue;
       }
-      j.shrink(Math.min(requiredHosts, j.numHost-j.minNodes));
-      requiredHosts -= j.numHost - j.minNodes;
+      if (j.numHost == j.minNodes) continue;
+      int releaseHosts = Math.min(requiredHosts, j.numHost - j.minNodes);
+      j.shrink(releaseHosts);
+      requiredHosts -= releaseHosts;
       if (requiredHosts <= 0) {
         break;
       }
