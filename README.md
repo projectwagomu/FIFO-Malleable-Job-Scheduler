@@ -7,12 +7,14 @@ scheduler/examples $ ./submit.sh
 ```
 
 ### examples
-```submit.sh
+`submit.sh`  
+```
 java Qsub /home/username/scheduler/scheduler/examples/job-dir-1/script.sh
 java Qsub /home/username/scheduler/scheduler/examples/job-dir-2/script.sh
 ```
 
-```script.sh
+`script.sh`  
+```
 #!/bin/bash
 #JOB_TYPE mpi
 #JOB_CLASS rigid
