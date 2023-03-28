@@ -65,6 +65,7 @@ The most significant one are:
 
 1. the hosts that the scheduler operates on (see [`ScriptManager#L15`](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/scheduler/src/scheduler/ScriptManager.java#L15))
 2. the path to the external programs the middlelayer relies on (see [`middlelayer/Main.java` l35](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L35), [line ](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L55), [line 70](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L70), and [line 102](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L102))
+3. the path to the scripts in the `submit.sh` script used to load the scheduler with many jobs are all absolute paths (system dependant)
 
 
 
@@ -80,48 +81,18 @@ $ cd ../charm
 $ make                 # Requires Charm++ to be compiled and installed with elastic options on the system
 $ cd ../../../scheduler
 $ ant clean-build
+$ cd examples
+$ javac Qsub.java
 ```
 
 ## Experiment setup
 
-### External dependencies
+First, both the `scheduler` and the `middleware` need to be running in the background.
+This can be done by running the `$ ant run` target in their respective directories.
 
-#### 1) Malleable APGAS for Java with GLB
-
-This program 
-
-```bash
-
-```
-
-## Running the test
+Then, scripts need to be submitted using the `Qsub` Java program.
+Script [/scheduler/examples/submit.sh](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/scheduler/examples/submit.sh) has a number of jobs pre-prepared for submission based on the scripts contained [in the various example directories](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/tree/master/scheduler/examples).
+You can load the scheduler by running `$ ./script.sh`. 
 
 
 
-```shell
-scheduler $ ant
-middlelayer $ ant
-scheduler/examples $ ./submit.sh
-```
-
-### examples
-`submit.sh`  
-```
-java Qsub /home/username/scheduler/scheduler/examples/job-dir-1/script.sh
-java Qsub /home/username/scheduler/scheduler/examples/job-dir-2/script.sh
-```
-
-`script.sh`  
-```
-#!/bin/bash
-#JOB_TYPE mpi
-#JOB_CLASS rigid
-#MIN_NODES 2
-#MAX_NODES 2
-
-cd $SCRIPT_DIR
-mpirun -n $NODES --hostfile $NODE_FILE ./main
-```
-
-### todo
-- refactor
