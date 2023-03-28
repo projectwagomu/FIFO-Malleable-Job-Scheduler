@@ -1,0 +1,983 @@
+glb.examples.syntheticBenchmark.StartSynthetic starts, date: Wed, 8 Feb 2023 09:24:45 +0900
+[09:24:45.498732] (in attachPlace) : place(0) attached from hostName=piccolo00, attachedPlaces=[place(0)], maxPlacesPerHost=1
+[09:24:46.415294] (in attachPlace) : place(1) attached from hostName=piccolo01, attachedPlaces=[place(1)], maxPlacesPerHost=1
+[09:24:46.431316] (in attachPlace) : place(2) attached from hostName=piccolo04, attachedPlaces=[place(2)], maxPlacesPerHost=1
+[09:24:46.432494] (in attachPlace) : place(3) attached from hostName=piccolo05, attachedPlaces=[place(3)], maxPlacesPerHost=1
+[09:24:46.433642] (in attachPlace) : place(4) attached from hostName=piccolo06, attachedPlaces=[place(4)], maxPlacesPerHost=1
+[09:24:46.435197] (in attachPlace) : place(5) attached from hostName=piccolo07, attachedPlaces=[place(5)], maxPlacesPerHost=1
+JVM of Place 4 started
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth1 (eth1)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth0 (eth0)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:lo (lo)
+[APGAS] found ip: 192.168.3.6
+Feb 08, 2023 9:23:45 AM com.hazelcast.instance.HazelcastInstanceFactory
+WARNING: Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+JVM of Place 2 started
+JVM of Place 3 started
+JVM of Place 1 started
+JVM of Place 5 started
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth1 (eth1)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth0 (eth0)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:lo (lo)
+[APGAS] found ip: 192.168.3.4
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth1 (eth1)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth0 (eth0)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:lo (lo)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth1 (eth1)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth0 (eth0)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:lo (lo)
+[APGAS] found ip: 192.168.3.5
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth1 (eth1)
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:eth0 (eth0)[APGAS] found ip: 192.168.3.1
+
+[APGAS] host 192.168.3.0:5701 is reachable with network interface name:lo (lo)
+[APGAS] found ip: 192.168.3.7
+Feb 08, 2023 9:24:20 AM com.hazelcast.instance.HazelcastInstanceFactory
+WARNING: Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+Feb 08, 2023 9:25:25 AM com.hazelcast.instance.HazelcastInstanceFactory
+WARNING: Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+Feb 08, 2023 9:24:39 AM com.hazelcast.instance.HazelcastInstanceFactory
+WARNING: Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+Feb 08, 2023 9:24:11 AM com.hazelcast.instance.HazelcastInstanceFactory
+WARNING: Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/takaoka/posner-evolving-glb/lib/hazelcast-3.12.9.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/takaoka/posner-evolving-glb/lib/hazelcast-3.12.9.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/takaoka/posner-evolving-glb/lib/hazelcast-3.12.9.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/takaoka/posner-evolving-glb/lib/hazelcast-3.12.9.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/takaoka/posner-evolving-glb/lib/hazelcast-3.12.9.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+hazelcast started
+hazelcast started
+hazelcast started
+hazelcast started
+87856@piccolo07 all hazelcast members are connected
+84899@piccolo05 all hazelcast members are connected
+74586@piccolo06 all hazelcast members are connected
+[APGAS] New place was started at 192.168.3.7:5701
+[APGAS] New place was started at 192.168.3.5:5701
+[APGAS] 87856@piccolo07, place(5): all places are started, places.size()= 6, initialPlaces=6
+[APGAS] 5 sends ready to place 0
+[APGAS] New place was started at 192.168.3.6:5701
+[APGAS] 84899@piccolo05, place(3): all places are started, places.size()= 6, initialPlaces=6
+[APGAS] 3 sends ready to place 0
+[APGAS] 74586@piccolo06, place(4): all places are started, places.size()= 6, initialPlaces=6
+[APGAS] 4 sends ready to place 0
+95822@piccolo04 all hazelcast members are connected
+[APGAS] New place was started at 192.168.3.4:5701
+[APGAS] 95822@piccolo04, place(2): all places are started, places.size()= 6, initialPlaces=6
+[APGAS] 2 sends ready to place 0
+hazelcast started
+94423@piccolo01 all hazelcast members are connected
+[APGAS] New place was started at 192.168.3.1:5701
+[APGAS] 94423@piccolo01, place(1): all places are started, places.size()= 6, initialPlaces=6
+[APGAS] 1 sends ready to place 0
+[APGAS] Starting Places time: 5.621368737 sec
+APGAS config on place(0):
+  apgas.places=6
+  apgas.threads=8
+  apgas.immediate.threads=4
+  apgas.max.threads=256
+  apgas.resilient=true
+  apgas.backupcount=1
+  apgas.ppernode=null
+  apgas.master=null
+  apgas.hostfile=/home/takaoka/scheduler/scheduler/examples/apgas-malleable-4-12/nodeFile
+  apgas.java=java
+  apgas.verbose.launcher=true
+  apgas.launcher=apgas.launcher.SshLauncher
+  apgas.place.id=0
+  apgas.port=5701
+  apgas.network.interface=null
+  apgas.consoleprinter=true
+  apgas.hostmanager.strategy=0
+
+APGAS config on place(1):
+  apgas.places=6
+  apgas.threads=8
+  apgas.immediate.threads=4
+  apgas.max.threads=256
+  apgas.resilient=true
+  apgas.backupcount=1
+  apgas.ppernode=null
+  apgas.master=192.168.3.0:5701
+  apgas.hostfile=/home/takaoka/scheduler/scheduler/examples/apgas-malleable-4-12/nodeFile
+  apgas.java=java
+  apgas.verbose.launcher=true
+  apgas.launcher=apgas.launcher.SshLauncher
+  apgas.place.id=1
+  apgas.port=5701
+  apgas.network.interface=null
+  apgas.consoleprinter=true
+  apgas.hostmanager.strategy=0
+
+APGAS config on place(2):
+  apgas.places=6
+  apgas.threads=8
+  apgas.immediate.threads=4
+  apgas.max.threads=256
+  apgas.resilient=true
+  apgas.backupcount=1
+  apgas.ppernode=null
+  apgas.master=192.168.3.0:5701
+  apgas.hostfile=/home/takaoka/scheduler/scheduler/examples/apgas-malleable-4-12/nodeFile
+  apgas.java=java
+  apgas.verbose.launcher=true
+  apgas.launcher=apgas.launcher.SshLauncher
+  apgas.place.id=2
+  apgas.port=5701
+  apgas.network.interface=null
+  apgas.consoleprinter=true
+  apgas.hostmanager.strategy=0
+
+APGAS config on place(3):
+  apgas.places=6
+  apgas.threads=8
+  apgas.immediate.threads=4
+  apgas.max.threads=256
+  apgas.resilient=true
+  apgas.backupcount=1
+  apgas.ppernode=null
+  apgas.master=192.168.3.0:5701
+  apgas.hostfile=/home/takaoka/scheduler/scheduler/examples/apgas-malleable-4-12/nodeFile
+  apgas.java=java
+  apgas.verbose.launcher=true
+  apgas.launcher=apgas.launcher.SshLauncher
+  apgas.place.id=3
+  apgas.port=5701
+  apgas.network.interface=null
+  apgas.consoleprinter=true
+  apgas.hostmanager.strategy=0
+
+APGAS config on place(4):
+  apgas.places=6
+  apgas.threads=8
+  apgas.immediate.threads=4
+  apgas.max.threads=256
+  apgas.resilient=true
+  apgas.backupcount=1
+  apgas.ppernode=null
+  apgas.master=192.168.3.0:5701
+  apgas.hostfile=/home/takaoka/scheduler/scheduler/examples/apgas-malleable-4-12/nodeFile
+  apgas.java=java
+  apgas.verbose.launcher=true
+  apgas.launcher=apgas.launcher.SshLauncher
+  apgas.place.id=4
+  apgas.port=5701
+  apgas.network.interface=null
+  apgas.consoleprinter=true
+  apgas.hostmanager.strategy=0
+
+APGAS config on place(5):
+  apgas.places=6
+  apgas.threads=8
+  apgas.immediate.threads=4
+  apgas.max.threads=256
+  apgas.resilient=true
+  apgas.backupcount=1
+  apgas.ppernode=null
+  apgas.master=192.168.3.0:5701
+  apgas.hostfile=/home/takaoka/scheduler/scheduler/examples/apgas-malleable-4-12/nodeFile
+  apgas.java=java
+  apgas.verbose.launcher=true
+  apgas.launcher=apgas.launcher.SshLauncher
+  apgas.place.id=5
+  apgas.port=5701
+  apgas.network.interface=null
+  apgas.consoleprinter=true
+  apgas.hostmanager.strategy=0
+
+GLB Multiworker config on place(0): 
+  glb.multiworker.n=1
+  glb.multiworker.w=1
+  glb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy
+  glb.multiworker.workerperplace=2
+  glb.multiworker.benchmarkrepetitions=1
+  glb.multiworker.malleability=true
+  glb.multiworker.malleability.delay=10
+  glb.multiworker.malleability.mallplaces=0
+  glb.multiworker.malleability.add=true
+
+GLB Multiworker config on place(1): 
+  glb.multiworker.n=1
+  glb.multiworker.w=1
+  glb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy
+  glb.multiworker.workerperplace=2
+  glb.multiworker.benchmarkrepetitions=1
+  glb.multiworker.malleability=true
+  glb.multiworker.malleability.delay=10
+  glb.multiworker.malleability.mallplaces=0
+  glb.multiworker.malleability.add=true
+
+GLB Multiworker config on place(2): 
+  glb.multiworker.n=1
+  glb.multiworker.w=1
+  glb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy
+  glb.multiworker.workerperplace=2
+  glb.multiworker.benchmarkrepetitions=1
+  glb.multiworker.malleability=true
+  glb.multiworker.malleability.delay=10
+  glb.multiworker.malleability.mallplaces=0
+  glb.multiworker.malleability.add=true
+
+GLB Multiworker config on place(3): 
+  glb.multiworker.n=1
+  glb.multiworker.w=1
+  glb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy
+  glb.multiworker.workerperplace=2
+  glb.multiworker.benchmarkrepetitions=1
+  glb.multiworker.malleability=true
+  glb.multiworker.malleability.delay=10
+  glb.multiworker.malleability.mallplaces=0
+  glb.multiworker.malleability.add=true
+
+GLB Multiworker config on place(4): 
+  glb.multiworker.n=1
+  glb.multiworker.w=1
+  glb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy
+  glb.multiworker.workerperplace=2
+  glb.multiworker.benchmarkrepetitions=1
+  glb.multiworker.malleability=true
+  glb.multiworker.malleability.delay=10
+  glb.multiworker.malleability.mallplaces=0
+  glb.multiworker.malleability.add=true
+
+GLB Multiworker config on place(5): 
+  glb.multiworker.n=1
+  glb.multiworker.w=1
+  glb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy
+  glb.multiworker.workerperplace=2
+  glb.multiworker.benchmarkrepetitions=1
+  glb.multiworker.malleability=true
+  glb.multiworker.malleability.delay=10
+  glb.multiworker.malleability.mallplaces=0
+  glb.multiworker.malleability.add=true
+
+Synthetic config:
+  dynamic
+  ballast=0
+  tasksPerWorker=6000
+  totalDuration(in milliseconds)=45000
+  totalDuration(in seconds)=45.0
+  taskDurationVariance=20
+
+Found parameter: d=16 children=2 lastDiff=6465
+taskDuration(in nanoseconds)=8239871, totalDuration(in milliseconds)=45000, taskCount=65535, tasksPerWorker=6000, localTasksPerWorker=6000
+place(0)@piccolo00 [09:24:52.224815] (in <init>) : LIFELINE=[2, 3]
+place(0)@piccolo00 [09:24:52.233039] (in <init>) : REVERSE_LIFELINE=[1, 3]
+place(4)@piccolo06 [09:23:51.00796] (in <init>) : LIFELINE=[3, 1]
+place(4)@piccolo06 [09:23:51.021785] (in <init>) : REVERSE_LIFELINE=[5, 1]
+place(2)@piccolo04 [09:24:25.980888] (in <init>) : LIFELINE=[1, 5]
+place(2)@piccolo04 [09:24:25.995225] (in <init>) : REVERSE_LIFELINE=[0, 5]
+place(1)@piccolo01 [09:25:30.452868] (in <init>) : LIFELINE=[0, 4]
+place(1)@piccolo01 [09:25:30.471303] (in <init>) : REVERSE_LIFELINE=[2, 4]
+place(5)@piccolo07 [09:24:44.379954] (in <init>) : LIFELINE=[4, 2]
+place(5)@piccolo07 [09:24:44.395036] (in <init>) : REVERSE_LIFELINE=[3, 2]
+place(3)@piccolo05 [09:24:16.908997] (in <init>) : LIFELINE=[5, 0]
+place(3)@piccolo05 [09:24:16.931487] (in <init>) : REVERSE_LIFELINE=[4, 0]
+place(0)@piccolo00 [09:24:52.309536] (in reset) : lifelineEstablished={2=false, 3=false}
+place(0)@piccolo00 [09:24:52.310049] (in reset) : lifelineThieves=[1, 3]
+place(1)@piccolo01 [09:25:30.541187] (in reset) : lifelineEstablished={0=true, 4=true}
+place(1)@piccolo01 [09:25:30.541668] (in reset) : lifelineThieves=[2, 4]
+place(2)@piccolo04 [09:24:26.067258] (in reset) : lifelineEstablished={1=true, 5=true}
+place(2)@piccolo04 [09:24:26.067764] (in reset) : lifelineThieves=[5]
+place(4)@piccolo06 [09:23:51.099279] (in reset) : lifelineEstablished={1=true, 3=true}
+place(4)@piccolo06 [09:23:51.099784] (in reset) : lifelineThieves=[5, 1]
+place(3)@piccolo05 [09:24:16.997036] (in reset) : lifelineEstablished={0=true, 5=true}
+place(3)@piccolo05 [09:24:16.997554] (in reset) : lifelineThieves=[4]
+place(5)@piccolo07 [09:24:44.473812] (in reset) : lifelineEstablished={4=true, 2=true}
+place(5)@piccolo07 [09:24:44.4746] (in reset) : lifelineThieves=[3, 2]
+place(0)@piccolo00 [09:24:52.368701] (in run) : new worker starts, workerCount=1
+place(0)@piccolo00 [09:24:52.39339] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(0)@piccolo00 [09:24:52.397301] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(0)@piccolo00 [09:24:52.39864] (in lifelineAnswerThread) : sends loot to lifeline=1, loot.size=1
+place(0)@piccolo00 [09:24:52.408663] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(0)@piccolo00 [09:24:52.408963] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(0)@piccolo00 [09:24:52.409077] (in lifelineAnswerThread) : sends loot to lifeline=3, loot.size=1
+place(1)@piccolo01 [09:25:30.616516] (in deal) : start new worker, workerCount=1
+place(1)@piccolo01 [09:25:30.618241] (in run) : new worker starts, workerCount=1
+place(3)@piccolo05 [09:24:17.074218] (in deal) : start new worker, workerCount=1
+place(3)@piccolo05 [09:24:17.075999] (in run) : new worker starts, workerCount=1
+place(1)@piccolo01 [09:25:30.644321] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(1)@piccolo01 [09:25:30.650675] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(1)@piccolo01 [09:25:30.652498] (in lifelineAnswerThread) : sends loot to lifeline=2, loot.size=1
+place(3)@piccolo05 [09:24:17.103499] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(1)@piccolo01 [09:25:30.658509] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(1)@piccolo01 [09:25:30.659042] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(1)@piccolo01 [09:25:30.65932] (in lifelineAnswerThread) : sends loot to lifeline=4, loot.size=1
+place(3)@piccolo05 [09:24:17.109611] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(3)@piccolo05 [09:24:17.111932] (in lifelineAnswerThread) : sends loot to lifeline=4, loot.size=1
+place(2)@piccolo04 [09:24:26.196314] (in deal) : start new worker, workerCount=1
+place(2)@piccolo04 [09:24:26.197688] (in run) : new worker starts, workerCount=1
+place(4)@piccolo06 [09:23:51.230546] (in deal) : start new worker, workerCount=1
+place(4)@piccolo06 [09:23:51.232743] (in run) : new worker starts, workerCount=1
+place(2)@piccolo04 [09:24:26.221486] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(4)@piccolo06 [09:23:51.256537] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(2)@piccolo04 [09:24:26.229638] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(2)@piccolo04 [09:24:26.232072] (in lifelineAnswerThread) : sends loot to lifeline=5, loot.size=1
+place(4)@piccolo06 [09:23:51.265142] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(4)@piccolo06 [09:23:51.267967] (in lifelineAnswerThread) : sends loot to lifeline=5, loot.size=1
+place(4)@piccolo06 [09:23:51.273911] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(4)@piccolo06 [09:23:51.274333] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(4)@piccolo06 [09:23:51.274549] (in lifelineAnswerThread) : sends loot to lifeline=1, loot.size=1
+place(5)@piccolo07 [09:24:44.654098] (in deal) : start new worker, workerCount=1
+place(5)@piccolo07 [09:24:44.65625] (in run) : new worker starts, workerCount=1
+place(5)@piccolo07 [09:24:44.682663] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(5)@piccolo07 [09:24:44.68966] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(5)@piccolo07 [09:24:44.691951] (in lifelineAnswerThread) : sends loot to lifeline=3, loot.size=1
+place(5)@piccolo07 [09:24:44.697823] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(5)@piccolo07 [09:24:44.698236] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(5)@piccolo07 [09:24:44.698457] (in lifelineAnswerThread) : sends loot to lifeline=2, loot.size=1
+place(0)@piccolo00 [09:24:56.249913] (in workerProcess) : workerID=1, allProcessedTasks=939, bag.getCurrentTaskCount()=7, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(0)@piccolo00 [09:24:56.250575] (in workerProcess) : workerID=0, allProcessedTasks=938, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(4)@piccolo06 [09:23:55.035119] (in workerProcess) : workerID=0, allProcessedTasks=917, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(4)@piccolo06 [09:23:55.035855] (in workerProcess) : workerID=1, allProcessedTasks=916, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(1)@piccolo01 [09:25:34.482993] (in workerProcess) : workerID=0, allProcessedTasks=928, bag.getCurrentTaskCount()=5, intraPlaceQueue=2, interPlaceQueue=3, workerCount=2
+place(1)@piccolo01 [09:25:34.483771] (in workerProcess) : workerID=1, allProcessedTasks=927, bag.getCurrentTaskCount()=6, intraPlaceQueue=2, interPlaceQueue=3, workerCount=2
+place(2)@piccolo04 [09:24:30.011801] (in workerProcess) : workerID=1, allProcessedTasks=923, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(2)@piccolo04 [09:24:30.012584] (in workerProcess) : workerID=0, allProcessedTasks=922, bag.getCurrentTaskCount()=5, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(3)@piccolo05 [09:24:20.940931] (in workerProcess) : workerID=1, allProcessedTasks=936, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(3)@piccolo05 [09:24:20.941625] (in workerProcess) : workerID=0, allProcessedTasks=935, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(5)@piccolo07 [09:24:48.415158] (in workerProcess) : workerID=1, allProcessedTasks=907, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(5)@piccolo07 [09:24:48.415905] (in workerProcess) : workerID=0, allProcessedTasks=906, bag.getCurrentTaskCount()=0, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(5)@piccolo07 [09:24:49.966244] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:23:56.614651] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:24:51.040717] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:24:32.651284] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:00.240055] (in workerProcess) : workerID=0, allProcessedTasks=1903, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(0)@piccolo00 [09:25:00.240321] (in workerProcess) : workerID=1, allProcessedTasks=1904, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(4)@piccolo06 [09:23:59.030027] (in workerProcess) : workerID=1, allProcessedTasks=1886, bag.getCurrentTaskCount()=4, intraPlaceQueue=3, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:23:59.031398] (in workerProcess) : workerID=0, allProcessedTasks=1887, bag.getCurrentTaskCount()=3, intraPlaceQueue=3, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:25:38.475632] (in workerProcess) : workerID=0, allProcessedTasks=1893, bag.getCurrentTaskCount()=3, intraPlaceQueue=2, interPlaceQueue=3, workerCount=2
+place(1)@piccolo01 [09:25:38.477114] (in workerProcess) : workerID=1, allProcessedTasks=1894, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=3, workerCount=2
+place(5)@piccolo07 [09:24:52.405218] (in workerProcess) : workerID=0, allProcessedTasks=1861, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(2)@piccolo04 [09:24:34.008424] (in workerProcess) : workerID=0, allProcessedTasks=1888, bag.getCurrentTaskCount()=2, intraPlaceQueue=2, interPlaceQueue=5, workerCount=2
+place(5)@piccolo07 [09:24:52.406669] (in workerProcess) : workerID=1, allProcessedTasks=1862, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(2)@piccolo04 [09:24:34.010978] (in workerProcess) : workerID=1, allProcessedTasks=1889, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=5, workerCount=2
+place(3)@piccolo05 [09:24:24.938143] (in workerProcess) : workerID=0, allProcessedTasks=1896, bag.getCurrentTaskCount()=5, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(3)@piccolo05 [09:24:24.942602] (in workerProcess) : workerID=1, allProcessedTasks=1897, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(5)@piccolo07 [09:24:53.1751] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:24:34.77972] (in steal) : received steal request from -6, loot().size=2, workerCount=2
+place(5)@piccolo07 [09:24:53.976425] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:01.868034] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:24:36.539171] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:01.57425] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:01.83402] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:24:36.806084] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:01.972272] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:27.875317] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:24:37.488012] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:03.770216] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:04.241841] (in workerProcess) : workerID=0, allProcessedTasks=2881, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(0)@piccolo00 [09:25:04.24197] (in workerProcess) : workerID=1, allProcessedTasks=2882, bag.getCurrentTaskCount()=7, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(4)@piccolo06 [09:24:03.031165] (in workerProcess) : workerID=1, allProcessedTasks=2844, bag.getCurrentTaskCount()=1, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:03.034187] (in workerProcess) : workerID=0, allProcessedTasks=2845, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:25:42.481845] (in workerProcess) : workerID=1, allProcessedTasks=2865, bag.getCurrentTaskCount()=4, intraPlaceQueue=3, interPlaceQueue=3, workerCount=2
+place(1)@piccolo01 [09:25:42.484003] (in workerProcess) : workerID=0, allProcessedTasks=2866, bag.getCurrentTaskCount()=4, intraPlaceQueue=3, interPlaceQueue=3, workerCount=2
+place(5)@piccolo07 [09:24:56.408043] (in workerProcess) : workerID=1, allProcessedTasks=2822, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:24:56.408694] (in workerProcess) : workerID=0, allProcessedTasks=2823, bag.getCurrentTaskCount()=7, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:38.011532] (in workerProcess) : workerID=1, allProcessedTasks=2846, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:38.012642] (in workerProcess) : workerID=0, allProcessedTasks=2847, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:28.938771] (in workerProcess) : workerID=0, allProcessedTasks=2868, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=6, workerCount=2
+place(3)@piccolo05 [09:24:28.945079] (in workerProcess) : workerID=1, allProcessedTasks=2869, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=6, workerCount=2
+place(4)@piccolo06 [09:24:06.232046] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:32.12705] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:08.24217] (in workerProcess) : workerID=1, allProcessedTasks=3853, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(0)@piccolo00 [09:25:08.245986] (in workerProcess) : workerID=0, allProcessedTasks=3854, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(4)@piccolo06 [09:24:07.040205] (in workerProcess) : workerID=1, allProcessedTasks=3809, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:07.040925] (in workerProcess) : workerID=0, allProcessedTasks=3810, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:25:46.487221] (in workerProcess) : workerID=1, allProcessedTasks=3830, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(1)@piccolo01 [09:25:46.487675] (in workerProcess) : workerID=0, allProcessedTasks=3831, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(5)@piccolo07 [09:25:00.409556] (in workerProcess) : workerID=1, allProcessedTasks=3795, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:42.01269] (in workerProcess) : workerID=1, allProcessedTasks=3817, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:42.016623] (in workerProcess) : workerID=0, allProcessedTasks=3818, bag.getCurrentTaskCount()=7, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:32.941163] (in workerProcess) : workerID=0, allProcessedTasks=3837, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(5)@piccolo07 [09:25:00.416573] (in workerProcess) : workerID=0, allProcessedTasks=3796, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:32.951883] (in workerProcess) : workerID=1, allProcessedTasks=3840, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(3)@piccolo05 [09:24:34.547391] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:24:43.626341] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:10.459979] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:36.35516] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:10.531709] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:25:49.984864] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:36.595283] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:24:45.672819] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:12.247388] (in workerProcess) : workerID=0, allProcessedTasks=4833, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(0)@piccolo00 [09:25:12.251] (in workerProcess) : workerID=1, allProcessedTasks=4834, bag.getCurrentTaskCount()=8, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(1)@piccolo01 [09:25:50.4888] (in workerProcess) : workerID=1, allProcessedTasks=4801, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:11.045264] (in workerProcess) : workerID=0, allProcessedTasks=4773, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:11.045922] (in workerProcess) : workerID=1, allProcessedTasks=4774, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:04.413214] (in workerProcess) : workerID=1, allProcessedTasks=4769, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:25:50.494178] (in workerProcess) : workerID=0, allProcessedTasks=4802, bag.getCurrentTaskCount()=3, intraPlaceQueue=2, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:46.020145] (in workerProcess) : workerID=1, allProcessedTasks=4797, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(2)@piccolo04 [09:24:46.021093] (in workerProcess) : workerID=0, allProcessedTasks=4798, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(3)@piccolo05 [09:24:36.947112] (in workerProcess) : workerID=0, allProcessedTasks=4804, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:04.422606] (in workerProcess) : workerID=0, allProcessedTasks=4771, bag.getCurrentTaskCount()=0, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:36.956018] (in workerProcess) : workerID=1, allProcessedTasks=4807, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:48.028009] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:25:52.50545] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:14.768383] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:16.01991] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:40.826075] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:16.184409] (in steal) : received steal request from -4, loot().size=2, workerCount=2
+place(0)@piccolo00 [09:25:16.248305] (in workerProcess) : workerID=0, allProcessedTasks=5798, bag.getCurrentTaskCount()=0, intraPlaceQueue=2, interPlaceQueue=3, workerCount=2
+place(0)@piccolo00 [09:25:16.256048] (in workerProcess) : workerID=1, allProcessedTasks=5800, bag.getCurrentTaskCount()=12, intraPlaceQueue=1, interPlaceQueue=3, workerCount=2
+place(1)@piccolo01 [09:25:54.489206] (in workerProcess) : workerID=1, allProcessedTasks=5774, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(4)@piccolo06 [09:24:15.048109] (in workerProcess) : workerID=0, allProcessedTasks=5743, bag.getCurrentTaskCount()=9, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:15.050893] (in workerProcess) : workerID=1, allProcessedTasks=5744, bag.getCurrentTaskCount()=8, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:25:54.495217] (in workerProcess) : workerID=0, allProcessedTasks=5775, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(5)@piccolo07 [09:25:08.41952] (in workerProcess) : workerID=1, allProcessedTasks=5738, bag.getCurrentTaskCount()=7, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:50.024135] (in workerProcess) : workerID=1, allProcessedTasks=5766, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:50.029071] (in workerProcess) : workerID=0, allProcessedTasks=5767, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:08.427532] (in workerProcess) : workerID=0, allProcessedTasks=5740, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:40.954859] (in workerProcess) : workerID=0, allProcessedTasks=5773, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:40.956336] (in workerProcess) : workerID=1, allProcessedTasks=5774, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:41.622679] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:25:55.175247] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:24:52.261587] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:43.187719] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:10.83469] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:17.470104] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:24:53.335753] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:19.618569] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(1)@piccolo01 [09:25:58.128985] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:44.581158] (in steal) : received steal request from -2, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:20.252595] (in workerProcess) : workerID=0, allProcessedTasks=6769, bag.getCurrentTaskCount()=5, intraPlaceQueue=2, interPlaceQueue=2, workerCount=2
+place(0)@piccolo00 [09:25:20.26312] (in workerProcess) : workerID=1, allProcessedTasks=6772, bag.getCurrentTaskCount()=5, intraPlaceQueue=2, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:19.051088] (in workerProcess) : workerID=0, allProcessedTasks=6711, bag.getCurrentTaskCount()=6, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(1)@piccolo01 [09:25:58.495484] (in workerProcess) : workerID=1, allProcessedTasks=6744, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:19.055101] (in workerProcess) : workerID=1, allProcessedTasks=6712, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(1)@piccolo01 [09:25:58.500472] (in workerProcess) : workerID=0, allProcessedTasks=6745, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:12.424941] (in workerProcess) : workerID=1, allProcessedTasks=6715, bag.getCurrentTaskCount()=0, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:54.027607] (in workerProcess) : workerID=1, allProcessedTasks=6727, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:12.428303] (in workerProcess) : workerID=0, allProcessedTasks=6716, bag.getCurrentTaskCount()=3, intraPlaceQueue=0, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:44.958827] (in workerProcess) : workerID=1, allProcessedTasks=6746, bag.getCurrentTaskCount()=3, intraPlaceQueue=2, interPlaceQueue=4, workerCount=2
+place(3)@piccolo05 [09:24:44.960578] (in workerProcess) : workerID=0, allProcessedTasks=6747, bag.getCurrentTaskCount()=3, intraPlaceQueue=2, interPlaceQueue=4, workerCount=2
+place(2)@piccolo04 [09:24:54.037342] (in workerProcess) : workerID=0, allProcessedTasks=6729, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:26:00.250526] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:20.808552] (in steal) : received steal request from -2, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:46.883258] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:22.242073] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:47.416338] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:22.773881] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:15.062028] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:24:56.66716] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:15.200335] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:47.728734] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:15.730231] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:48.259167] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:24:57.432809] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:23.714823] (in steal) : received steal request from -3, loot().size=2, workerCount=2
+place(0)@piccolo00 [09:25:24.258976] (in workerProcess) : workerID=0, allProcessedTasks=7738, bag.getCurrentTaskCount()=5, intraPlaceQueue=4, interPlaceQueue=3, workerCount=2
+place(0)@piccolo00 [09:25:24.265486] (in workerProcess) : workerID=1, allProcessedTasks=7739, bag.getCurrentTaskCount()=10, intraPlaceQueue=4, interPlaceQueue=3, workerCount=2
+place(4)@piccolo06 [09:24:23.051937] (in workerProcess) : workerID=0, allProcessedTasks=7682, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=4, workerCount=2
+place(1)@piccolo01 [09:26:02.501435] (in workerProcess) : workerID=1, allProcessedTasks=7711, bag.getCurrentTaskCount()=7, intraPlaceQueue=2, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:26:02.502771] (in workerProcess) : workerID=0, allProcessedTasks=7712, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:23.062233] (in workerProcess) : workerID=1, allProcessedTasks=7685, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=4, workerCount=2
+place(2)@piccolo04 [09:24:58.034072] (in workerProcess) : workerID=1, allProcessedTasks=7697, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:16.432294] (in workerProcess) : workerID=1, allProcessedTasks=7679, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:48.960838] (in workerProcess) : workerID=1, allProcessedTasks=7715, bag.getCurrentTaskCount()=1, intraPlaceQueue=2, interPlaceQueue=4, workerCount=2
+place(5)@piccolo07 [09:25:16.434076] (in workerProcess) : workerID=0, allProcessedTasks=7680, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:24:58.03981] (in workerProcess) : workerID=0, allProcessedTasks=7698, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:48.967552] (in workerProcess) : workerID=0, allProcessedTasks=7716, bag.getCurrentTaskCount()=4, intraPlaceQueue=2, interPlaceQueue=4, workerCount=2
+place(5)@piccolo07 [09:25:16.798993] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:02.87848] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:50.062518] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:24.170633] (in steal) : received steal request from -4, loot().size=2, workerCount=2
+place(5)@piccolo07 [09:25:17.861033] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:25.745952] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:18.396812] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:00.001953] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:18.666209] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:25.301482] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:18.808338] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:26.6937] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:01.472657] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:52.398938] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:19.87968] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:05.959479] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:20.022759] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:52.55151] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:01.754217] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:06.231414] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:28.263298] (in workerProcess) : workerID=0, allProcessedTasks=8715, bag.getCurrentTaskCount()=7, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(0)@piccolo00 [09:25:28.268951] (in workerProcess) : workerID=1, allProcessedTasks=8716, bag.getCurrentTaskCount()=9, intraPlaceQueue=2, interPlaceQueue=1, workerCount=2
+place(1)@piccolo01 [09:26:06.4834] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:24:52.93377] (in steal) : received steal request from -2, loot().size=1, workerCount=2
+place(1)@piccolo01 [09:26:06.492896] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:02.019085] (in steal) : received steal request from -2, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:27.05425] (in workerProcess) : workerID=0, allProcessedTasks=8651, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(1)@piccolo01 [09:26:06.507118] (in workerProcess) : workerID=1, allProcessedTasks=8678, bag.getCurrentTaskCount()=2, intraPlaceQueue=0, interPlaceQueue=0, workerCount=1
+place(3)@piccolo05 [09:24:52.959988] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(5)@piccolo07 [09:25:20.43282] (in workerProcess) : workerID=1, allProcessedTasks=8627, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:26:06.511868] (in steal) : received steal request from -4, loot().size=0, workerCount=2
+place(5)@piccolo07 [09:25:20.434857] (in workerProcess) : workerID=0, allProcessedTasks=8628, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(4)@piccolo06 [09:24:27.069693] (in workerProcess) : workerID=1, allProcessedTasks=8655, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(3)@piccolo05 [09:24:52.965688] (in performLifelineSteals) : sends steal request to lifeline=place(5), workerCount=0
+place(2)@piccolo04 [09:25:02.041319] (in workerProcess) : workerID=1, allProcessedTasks=8658, bag.getCurrentTaskCount()=0, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(1)@piccolo01 [09:26:06.51755] (in workerProcess) : workerID=0, allProcessedTasks=8680, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=0, workerCount=2
+place(2)@piccolo04 [09:25:02.04668] (in workerProcess) : workerID=0, allProcessedTasks=8659, bag.getCurrentTaskCount()=2, intraPlaceQueue=0, interPlaceQueue=1, workerCount=2
+place(5)@piccolo07 [09:25:20.446089] (in steal) : received steal request from 3, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:52.986767] (in workerProcess) : workerID=0, allProcessedTasks=8687, bag.getCurrentTaskCount()=2, intraPlaceQueue=0, interPlaceQueue=0, workerCount=1
+place(3)@piccolo05 [09:24:52.99621] (in workerProcess) : workerID=1, allProcessedTasks=8688, bag.getCurrentTaskCount()=2, intraPlaceQueue=0, interPlaceQueue=0, workerCount=2
+place(1)@piccolo01 [09:26:06.633276] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:27.190877] (in steal) : received steal request from -2, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:53.246383] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:06.798868] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:53.38452] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:27.492244] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:53.52657] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:21.001225] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:02.68467] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:28.967386] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:21.352889] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:29.237807] (in steal) : received steal request from -6, loot().size=3, workerCount=2
+place(1)@piccolo01 [09:26:07.579168] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:03.10533] (in steal) : received steal request from -2, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:54.070399] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:28.178025] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(1)@piccolo01 [09:26:08.1211] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:28.678584] (in steal) : received steal request from -2, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:54.604756] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:28.712385] (in steal) : received steal request from -4, loot().size=0, workerCount=2
+place(3)@piccolo05 [09:24:54.607825] (in performLifelineSteals) : sends steal request to lifeline=place(5), workerCount=0
+place(5)@piccolo07 [09:25:22.081957] (in steal) : received steal request from 3, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:28.719305] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:08.165209] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:28.730097] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:03.700135] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(1)@piccolo01 [09:26:08.190506] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:28.747462] (in steal) : received steal request from -2, loot().size=0, workerCount=2
+place(1)@piccolo01 [09:26:08.193662] (in performLifelineSteals) : sends steal request to lifeline=place(0), workerCount=0
+place(0)@piccolo00 [09:25:30.002343] (in steal) : received steal request from 1, loot().size=2, workerCount=2
+place(4)@piccolo06 [09:24:29.796578] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:04.766756] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:29.834824] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:04.80495] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:29.969326] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:04.939261] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:30.039416] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:05.009181] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:05.066382] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:30.098602] (in steal) : received steal request from -3, loot().size=0, workerCount=2
+place(2)@piccolo04 [09:25:05.06944] (in performLifelineSteals) : sends steal request to lifeline=place(1), workerCount=0
+place(1)@piccolo01 [09:26:09.547467] (in steal) : received steal request from 2, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:30.108971] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:31.359765] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:30.177571] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:09.622849] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:56.714799] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:32.072178] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:32.266543] (in workerProcess) : workerID=0, allProcessedTasks=9687, bag.getCurrentTaskCount()=7, intraPlaceQueue=1, interPlaceQueue=5, workerCount=2
+place(0)@piccolo00 [09:25:32.268957] (in workerProcess) : workerID=1, allProcessedTasks=9688, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=5, workerCount=2
+place(4)@piccolo06 [09:24:31.058664] (in workerProcess) : workerID=0, allProcessedTasks=9615, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:26:10.512017] (in workerProcess) : workerID=1, allProcessedTasks=9637, bag.getCurrentTaskCount()=8, intraPlaceQueue=3, interPlaceQueue=5, workerCount=2
+place(4)@piccolo06 [09:24:31.069712] (in workerProcess) : workerID=1, allProcessedTasks=9618, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:24.437282] (in workerProcess) : workerID=0, allProcessedTasks=9601, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(1)@piccolo01 [09:26:10.518297] (in workerProcess) : workerID=0, allProcessedTasks=9638, bag.getCurrentTaskCount()=5, intraPlaceQueue=3, interPlaceQueue=5, workerCount=2
+place(5)@piccolo07 [09:25:24.440541] (in workerProcess) : workerID=1, allProcessedTasks=9602, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(2)@piccolo04 [09:25:06.046637] (in workerProcess) : workerID=1, allProcessedTasks=9623, bag.getCurrentTaskCount()=5, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:25:06.054078] (in workerProcess) : workerID=0, allProcessedTasks=9624, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:56.990507] (in workerProcess) : workerID=0, allProcessedTasks=9642, bag.getCurrentTaskCount()=1, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:24:56.997417] (in workerProcess) : workerID=1, allProcessedTasks=9643, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:24.766091] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:32.651463] (in steal) : received steal request from -6, loot().size=2, workerCount=2
+place(3)@piccolo05 [09:24:57.763182] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:31.871706] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:24:58.291098] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:11.843181] (in steal) : received steal request from -4, loot().size=2, workerCount=2
+place(4)@piccolo06 [09:24:33.843] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:35.094787] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:33.881047] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:35.131751] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:27.40157] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:09.005946] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:27.476868] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:13.556092] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:09.269478] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:35.551446] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:27.751231] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:34.38668] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:27.762213] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:09.366191] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:34.417658] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:27.785246] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:34.487353] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:27.854955] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:34.523174] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:13.968728] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:27.940555] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:00.469342] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:28.078831] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:00.607357] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:28.344476] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:09.94829] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:36.266598] (in workerProcess) : workerID=0, allProcessedTasks=10660, bag.getCurrentTaskCount()=0, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(0)@piccolo00 [09:25:36.272664] (in workerProcess) : workerID=1, allProcessedTasks=10661, bag.getCurrentTaskCount()=1, intraPlaceQueue=0, interPlaceQueue=1, workerCount=2
+place(4)@piccolo06 [09:24:35.061503] (in workerProcess) : workerID=0, allProcessedTasks=10577, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:28.437785] (in workerProcess) : workerID=0, allProcessedTasks=10552, bag.getCurrentTaskCount()=1, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(5)@piccolo07 [09:25:28.44085] (in workerProcess) : workerID=1, allProcessedTasks=10553, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:26:14.519394] (in workerProcess) : workerID=1, allProcessedTasks=10608, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(4)@piccolo06 [09:24:35.077791] (in workerProcess) : workerID=1, allProcessedTasks=10581, bag.getCurrentTaskCount()=2, intraPlaceQueue=0, interPlaceQueue=2, workerCount=2
+place(1)@piccolo01 [09:26:14.52521] (in workerProcess) : workerID=0, allProcessedTasks=10609, bag.getCurrentTaskCount()=4, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(2)@piccolo04 [09:25:10.051846] (in workerProcess) : workerID=1, allProcessedTasks=10582, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(2)@piccolo04 [09:25:10.058337] (in workerProcess) : workerID=0, allProcessedTasks=10583, bag.getCurrentTaskCount()=2, intraPlaceQueue=1, interPlaceQueue=2, workerCount=2
+place(3)@piccolo05 [09:25:00.998257] (in workerProcess) : workerID=0, allProcessedTasks=10613, bag.getCurrentTaskCount()=3, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(3)@piccolo05 [09:25:01.006087] (in workerProcess) : workerID=1, allProcessedTasks=10615, bag.getCurrentTaskCount()=1, intraPlaceQueue=1, interPlaceQueue=1, workerCount=2
+place(3)@piccolo05 [09:25:01.072529] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:14.624365] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:36.590606] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:35.343837] (in steal) : received steal request from -1, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:36.630162] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:14.825832] (in steal) : received steal request from -1, loot().size=3, workerCount=2
+place(5)@piccolo07 [09:25:28.890623] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:14.969653] (in steal) : received steal request from -6, loot().size=2, workerCount=2
+place(4)@piccolo06 [09:24:35.567059] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.012512] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:10.605263] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.081621] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:35.637616] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:01.532815] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:10.741139] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:01.66746] (in steal) : received steal request from -3, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:35.912507] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:01.807517] (in steal) : received steal request from -5, loot().size=2, workerCount=2
+place(4)@piccolo06 [09:24:36.007377] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:01.902004] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:25:02.053903] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:37.410999] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:25:02.093974] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.645806] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:25:02.165337] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.639479] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:37.527055] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.644799] (in steal) : received steal request from -1, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:36.285057] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.652489] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(2)@piccolo04 [09:25:11.285408] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.684184] (in steal) : received steal request from -3, loot().size=0, workerCount=2
+place(4)@piccolo06 [09:24:36.320203] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(2)@piccolo04 [09:25:11.289171] (in performLifelineSteals) : sends steal request to lifeline=place(1), workerCount=0
+place(5)@piccolo07 [09:25:29.687586] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(1)@piccolo01 [09:26:15.765747] (in steal) : received steal request from 2, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:36.339441] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:02.234354] (in steal) : received steal request from -5, loot().size=0, workerCount=2
+place(3)@piccolo05 [09:25:02.236841] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(4)@piccolo06 [09:24:36.343883] (in performLifelineSteals) : sends steal request to lifeline=place(3), workerCount=0
+place(4)@piccolo06 [09:24:36.344394] (in steal) : received steal request from -4, loot().size=0, workerCount=0
+place(3)@piccolo05 [09:25:02.239391] (in performLifelineSteals) : sends steal request to lifeline=place(5), workerCount=0
+place(3)@piccolo05 [09:25:02.240155] (in steal) : received steal request from 4, loot().size=0, workerCount=0
+place(5)@piccolo07 [09:25:29.713185] (in steal) : received steal request from 3, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:36.347875] (in performLifelineSteals) : sends steal request to lifeline=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.793138] (in steal) : received steal request from 4, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:25:02.261534] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.813235] (in steal) : received steal request from -4, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:36.370561] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:37.621438] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:29.747767] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:11.351793] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(0)@piccolo00 [09:25:37.635755] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.753532] (in steal) : received steal request from -1, loot().size=0, workerCount=1
+place(3)@piccolo05 [09:25:02.282553] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(3)@piccolo05 [09:25:02.282719] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(3)@piccolo05 [09:25:02.282838] (in lifelineAnswerThread) : sends loot to lifeline=4, loot.size=1
+place(0)@piccolo00 [09:25:37.638842] (in performLifelineSteals) : sends steal request to lifeline=place(2), workerCount=0
+place(2)@piccolo04 [09:25:11.360345] (in steal) : received steal request from 0, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:29.784239] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.863297] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(4)@piccolo06 [09:24:36.420878] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:11.391075] (in steal) : received steal request from -5, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:25:02.323889] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.797779] (in steal) : received steal request from -4, loot().size=0, workerCount=2
+place(4)@piccolo06 [09:24:36.431736] (in performRandomSteals) : sends steal request to random=place(3), workerCount=0
+place(3)@piccolo05 [09:25:02.326563] (in steal) : received steal request from -5, loot().size=0, workerCount=0
+place(3)@piccolo05 [09:25:02.326768] (in performLifelineSteals) : sends steal request to lifeline=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.800416] (in steal) : received steal request from 3, loot().size=0, workerCount=2
+place(4)@piccolo06 [09:24:36.434343] (in performLifelineSteals) : sends steal request to lifeline=place(3), workerCount=0
+place(3)@piccolo05 [09:25:02.328948] (in steal) : received steal request from 4, loot().size=0, workerCount=0
+place(3)@piccolo05 [09:25:02.329155] (in performLifelineSteals) : sends steal request to lifeline=place(0), workerCount=0
+place(4)@piccolo06 [09:24:36.436792] (in performLifelineSteals) : sends steal request to lifeline=place(1), workerCount=0
+place(0)@piccolo00 [09:25:37.686372] (in steal) : received steal request from 3, loot().size=1, workerCount=2
+place(1)@piccolo01 [09:26:15.881962] (in steal) : received steal request from 4, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:29.806058] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.88489] (in steal) : received steal request from -6, loot().size=1, workerCount=2
+place(5)@piccolo07 [09:25:29.814992] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.893896] (in performRandomSteals) : sends steal request to random=place(4), workerCount=0
+place(1)@piccolo01 [09:26:15.894107] (in steal) : received steal request from -6, loot().size=0, workerCount=0
+place(4)@piccolo06 [09:24:36.451418] (in steal) : received steal request from -2, loot().size=0, workerCount=2
+place(5)@piccolo07 [09:25:29.817932] (in performLifelineSteals) : sends steal request to lifeline=place(4), workerCount=0
+place(0)@piccolo00 [09:25:37.701932] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(1)@piccolo01 [09:26:15.896712] (in performLifelineSteals) : sends steal request to lifeline=place(0), workerCount=0
+place(0)@piccolo00 [09:25:37.703176] (in steal) : received steal request from 1, loot().size=0, workerCount=0
+place(5)@piccolo07 [09:25:29.819904] (in steal) : received steal request from -1, loot().size=0, workerCount=0
+place(4)@piccolo06 [09:24:36.45439] (in steal) : received steal request from 5, loot().size=0, workerCount=1
+place(0)@piccolo00 [09:25:37.70419] (in performLifelineSteals) : sends steal request to lifeline=place(2), workerCount=0
+place(5)@piccolo07 [09:25:29.821785] (in performLifelineSteals) : sends steal request to lifeline=place(2), workerCount=0
+place(4)@piccolo06 [09:24:36.455737] (in performRandomSteals) : sends steal request to random=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.900086] (in performLifelineSteals) : sends steal request to lifeline=place(4), workerCount=0
+place(2)@piccolo04 [09:25:11.424815] (in steal) : received steal request from 0, loot().size=1, workerCount=2
+place(3)@piccolo05 [09:25:02.349702] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(2)@piccolo04 [09:25:11.425432] (in steal) : received steal request from 5, loot().size=0, workerCount=2
+place(1)@piccolo01 [09:26:15.901032] (in steal) : received steal request from -5, loot().size=0, workerCount=0
+place(4)@piccolo06 [09:24:36.457126] (in steal) : received steal request from 1, loot().size=0, workerCount=0
+place(5)@piccolo07 [09:25:29.823643] (in steal) : received steal request from -4, loot().size=0, workerCount=0
+place(4)@piccolo06 [09:24:36.457903] (in performLifelineSteals) : sends steal request to lifeline=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.9025] (in run) : going to sleep, workerCount=0
+place(5)@piccolo07 [09:25:29.824822] (in run) : going to sleep, workerCount=0
+place(3)@piccolo05 [09:25:02.352423] (in performLifelineSteals) : sends steal request to lifeline=place(0), workerCount=0
+place(1)@piccolo01 [09:26:15.903113] (in steal) : received steal request from 4, loot().size=0, workerCount=0
+place(0)@piccolo00 [09:25:37.709382] (in steal) : received steal request from 3, loot().size=0, workerCount=1
+place(2)@piccolo04 [09:25:11.428966] (in lifelineAnswerThread) : BEFORE performing interPlaceQueue.split(true) and interPlaceQueue should now contain tasks empty, interPlaceQueue.isEmpty=false, interPlaceQueue.size()=1 loot.size()=0
+place(2)@piccolo04 [09:25:11.429132] (in lifelineAnswerThread) : AFTER performing interPlaceQueue.split(true) and interPlaceQueue should now be empty, interPlaceQueue.isEmpty=true, interPlaceQueue.size()=0 loot.size()=1
+place(2)@piccolo04 [09:25:11.429237] (in lifelineAnswerThread) : sends loot to lifeline=5, loot.size=1
+place(4)@piccolo06 [09:24:36.460501] (in run) : going to sleep, workerCount=0
+place(3)@piccolo05 [09:25:02.354991] (in run) : going to sleep, workerCount=0
+place(5)@piccolo07 [09:25:29.831857] (in deal) : start new worker, workerCount=1
+place(5)@piccolo07 [09:25:29.832132] (in run) : new worker starts, workerCount=1
+place(5)@piccolo07 [09:25:29.839136] (in performRandomSteals) : sends steal request to random=place(2), workerCount=0
+place(2)@piccolo04 [09:25:11.443085] (in steal) : received steal request from -6, loot().size=0, workerCount=1
+place(0)@piccolo00 [09:25:37.72443] (in performRandomSteals) : sends steal request to random=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.841904] (in performLifelineSteals) : sends steal request to lifeline=place(2), workerCount=0
+place(5)@piccolo07 [09:25:29.842143] (in steal) : received steal request from -1, loot().size=0, workerCount=0
+place(2)@piccolo04 [09:25:11.44565] (in steal) : received steal request from 5, loot().size=0, workerCount=2
+place(0)@piccolo00 [09:25:37.726581] (in performLifelineSteals) : sends steal request to lifeline=place(2), workerCount=0
+place(5)@piccolo07 [09:25:29.84401] (in run) : going to sleep, workerCount=0
+place(2)@piccolo04 [09:25:11.446896] (in steal) : received steal request from 0, loot().size=0, workerCount=2
+place(0)@piccolo00 [09:25:37.728458] (in performLifelineSteals) : sends steal request to lifeline=place(3), workerCount=0
+place(3)@piccolo05 [09:25:02.373738] (in steal) : received steal request from 0, loot().size=0, workerCount=0
+place(0)@piccolo00 [09:25:37.731019] (in run) : going to sleep, workerCount=0
+======================================================
+place(0)@piccolo00 [09:25:37.731192] (in run) : close the socket
+======================================================
+[APGAS] place(0) caught Exception
+java.lang.NullPointerException
+	at apgas.impl.HostManager.addHostFromMessage(HostManager.java:88)
+	at apgas.impl.GlobalRuntimeImpl.receiveSchedulerMessage(GlobalRuntimeImpl.java:1069)
+	at apgas.Constructs.receiveSchedulerMessage(Constructs.java:228)
+	at glb.multiworker.GLBcomputer.lambda$malleabilityTestingWithScheduler$431d408b$1(GLBcomputer.java:1257)
+	at apgas.impl.Task.compute(Task.java:77)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:189)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+place(2)@piccolo04 [09:25:11.454018] (in performRandomSteals) : sends steal request to random=place(0), workerCount=0
+place(0)@piccolo00 [09:25:37.735844] (in steal) : received steal request from -3, loot().size=0, workerCount=0
+place(2)@piccolo04 [09:25:11.456586] (in performLifelineSteals) : sends steal request to lifeline=place(1), workerCount=0
+place(1)@piccolo01 [09:26:15.933535] (in steal) : received steal request from 2, loot().size=0, workerCount=0
+place(2)@piccolo04 [09:25:11.459824] (in performLifelineSteals) : sends steal request to lifeline=place(5), workerCount=0
+place(5)@piccolo07 [09:25:29.858583] (in steal) : received steal request from 2, loot().size=0, workerCount=0
+place(2)@piccolo04 [09:25:11.462767] (in run) : going to sleep, workerCount=0
+[APGAS] place(0) Exception occurred
+java.lang.NullPointerException
+	at apgas.impl.HostManager.addHostFromMessage(HostManager.java:88)
+	at apgas.impl.GlobalRuntimeImpl.receiveSchedulerMessage(GlobalRuntimeImpl.java:1069)
+	at apgas.Constructs.receiveSchedulerMessage(Constructs.java:228)
+	at glb.multiworker.GLBcomputer.lambda$malleabilityTestingWithScheduler$431d408b$1(GLBcomputer.java:1257)
+	at apgas.impl.Task.compute(Task.java:77)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:189)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+place(0)@piccolo00 [09:25:37.753054] (in computeDynamic) : Exception caught
+apgas.MultipleException
+	at apgas.MultipleException.make(MultipleException.java:50)
+	at apgas.impl.GlobalRuntimeImpl.finish(GlobalRuntimeImpl.java:458)
+	at apgas.Constructs.finish(Constructs.java:40)
+	at glb.multiworker.GLBcomputer.computeDynamic(GLBcomputer.java:487)
+	at glb.multiworker.GLBcomputer.computeDynamic(GLBcomputer.java:457)
+	at glb.examples.syntheticBenchmark.StartSynthetic.main(StartSynthetic.java:151)
+	Suppressed: java.lang.NullPointerException
+		at apgas.impl.HostManager.addHostFromMessage(HostManager.java:88)
+		at apgas.impl.GlobalRuntimeImpl.receiveSchedulerMessage(GlobalRuntimeImpl.java:1069)
+		at apgas.Constructs.receiveSchedulerMessage(Constructs.java:228)
+		at glb.multiworker.GLBcomputer.lambda$malleabilityTestingWithScheduler$431d408b$1(GLBcomputer.java:1257)
+		at apgas.impl.Task.compute(Task.java:77)
+		at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:189)
+		at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+		at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+		at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+		at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+		at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+place(0)@piccolo00 [09:25:37.753663] (in computeDynamic) : after finish run, workerCount=0
+Run 1/1; 65535; 45.38632409; 
+Process time: 45.38632409 seconds
+Initialization time (s); 0.063034756
+Computation time (s); 45.38632409
+Result gathering (s); 0.038266943
+Place;Worker Spawns;IntraQueueSplit;IntraQueueFed;InterQueueSplit;InterQueueFed;Rdm Steals Attempted;Rdm Steals Successes;Rdm Steals Received;Rdm Steals Suffered;Lifeline Steals Attempts;Lifeline Steals Success;Lifeline Steals Received;Lifeline Steals Suffered;Lifeline Thread Active(s);Lifeline Thread Holding(s);Lifeline Thread Inactive(s);Lifeline Thread Woken Up;Information Sent;Information Received;Worker Yielding;
+0;17;60;47;39;30;6;3;21;20;4;2;4;4;0.005849579;1.12016E-4;45.355846162;6;0.0;
+1;28;168;134;62;54;9;7;24;21;3;3;6;6;0.005446512;3.76229E-4;45.277544869;6;0.0;
+2;58;320;289;114;110;15;12;20;19;4;4;5;4;0.024179148;2.6337E-4;45.239898608;6;0.0;
+3;83;419;383;134;127;24;19;18;16;6;6;3;2;0.023891942;4.07912E-4;45.25386477;6;0.0;
+4;85;285;269;118;115;30;27;18;13;5;5;2;2;0.003534278;2.85143E-4;45.223385446;6;0.0;
+5;93;460;415;155;154;30;28;13;7;3;3;5;5;0.007139403;2.42249E-4;45.171832379;8;0.0;
+
+WORKER DATA
+Nb of worker spawned
+Place;0;1;2;
+0;0.059551232;0.072844444;45.253928414;
+1;0.1557716;0.139298104;45.091254386;
+2;0.201186631;0.249824265;44.935313194;
+3;0.226885795;0.36114057;44.798297725;
+4;0.304160049;0.369807341;44.7123567;
+5;0.36408741;0.407616403;44.614620277;
+Nb of worker stealing
+Place;0;1;2;
+0;45.348098359;0.003917781;6.97E-6;
+1;45.264594407;0.008403025;6.7673E-5;
+2;45.243351322;0.011136315;0.0;
+3;45.257891807;0.01327402;1.272E-5;
+4;45.210251323;0.011119424;0.0;
+5;45.166679785;0.013108036;0.0;
+----------------------------------------------
+PLACE 0
+-------------- Random Steals -----------------
+This place succeeded   3/6
+Other places succeeded 20/21
+------------- Lifeline Steals ----------------
+This place succeeded     2/4
+Other places succeeded   4/4
+------------- Lifeline Thread ----------------
+Active   (s) 0.005849579
+Inactive (s) 45.355846162
+On Hold  (s) 1.12016E-4
+Woken up a total of 6 times
+------------------ Runtime -------------------
+Time spent with 0 workers (s): 0.059551232
+Time spent with 1 workers (s): 0.072844444
+Time spent with 2 workers (s): 45.253928414
+Time spent yielding (s) 0.0
+Number of processed tasks 10998
+----------------------------------------------
+----------------------------------------------
+PLACE 1
+-------------- Random Steals -----------------
+This place succeeded   7/9
+Other places succeeded 21/24
+------------- Lifeline Steals ----------------
+This place succeeded     3/3
+Other places succeeded   6/6
+------------- Lifeline Thread ----------------
+Active   (s) 0.005446512
+Inactive (s) 45.277544869
+On Hold  (s) 3.76229E-4
+Woken up a total of 6 times
+------------------ Runtime -------------------
+Time spent with 0 workers (s): 0.1557716
+Time spent with 1 workers (s): 0.139298104
+Time spent with 2 workers (s): 45.091254386
+Time spent yielding (s) 0.0
+Number of processed tasks 10942
+----------------------------------------------
+----------------------------------------------
+PLACE 2
+-------------- Random Steals -----------------
+This place succeeded   12/15
+Other places succeeded 19/20
+------------- Lifeline Steals ----------------
+This place succeeded     4/4
+Other places succeeded   4/5
+------------- Lifeline Thread ----------------
+Active   (s) 0.024179148
+Inactive (s) 45.239898608
+On Hold  (s) 2.6337E-4
+Woken up a total of 6 times
+------------------ Runtime -------------------
+Time spent with 0 workers (s): 0.201186631
+Time spent with 1 workers (s): 0.249824265
+Time spent with 2 workers (s): 44.935313194
+Time spent yielding (s) 0.0
+Number of processed tasks 10911
+----------------------------------------------
+----------------------------------------------
+PLACE 3
+-------------- Random Steals -----------------
+This place succeeded   19/24
+Other places succeeded 16/18
+------------- Lifeline Steals ----------------
+This place succeeded     6/6
+Other places succeeded   2/3
+------------- Lifeline Thread ----------------
+Active   (s) 0.023891942
+Inactive (s) 45.25386477
+On Hold  (s) 4.07912E-4
+Woken up a total of 6 times
+------------------ Runtime -------------------
+Time spent with 0 workers (s): 0.226885795
+Time spent with 1 workers (s): 0.36114057
+Time spent with 2 workers (s): 44.798297725
+Time spent yielding (s) 0.0
+Number of processed tasks 10921
+----------------------------------------------
+----------------------------------------------
+PLACE 4
+-------------- Random Steals -----------------
+This place succeeded   27/30
+Other places succeeded 13/18
+------------- Lifeline Steals ----------------
+This place succeeded     5/5
+Other places succeeded   2/2
+------------- Lifeline Thread ----------------
+Active   (s) 0.003534278
+Inactive (s) 45.223385446
+On Hold  (s) 2.85143E-4
+Woken up a total of 6 times
+------------------ Runtime -------------------
+Time spent with 0 workers (s): 0.304160049
+Time spent with 1 workers (s): 0.369807341
+Time spent with 2 workers (s): 44.7123567
+Time spent yielding (s) 0.0
+Number of processed tasks 10889
+----------------------------------------------
+----------------------------------------------
+PLACE 5
+-------------- Random Steals -----------------
+This place succeeded   28/30
+Other places succeeded 7/13
+------------- Lifeline Steals ----------------
+This place succeeded     3/3
+Other places succeeded   5/5
+------------- Lifeline Thread ----------------
+Active   (s) 0.007139403
+Inactive (s) 45.171832379
+On Hold  (s) 2.42249E-4
+Woken up a total of 8 times
+------------------ Runtime -------------------
+Time spent with 0 workers (s): 0.36408741
+Time spent with 1 workers (s): 0.407616403
+Time spent with 2 workers (s): 44.614620277
+Time spent yielding (s) 0.0
+Number of processed tasks 10874
+----------------------------------------------
+
+#############################################################
+Result is correct
+#############################################################
+

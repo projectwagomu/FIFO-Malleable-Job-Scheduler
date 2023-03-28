@@ -1,0 +1,166 @@
+Charmrun> scalable start enabled. 
+ccs: 2
+ccs: Server IP = 192.168.3.0, Server port = 1234 $
+Charmrun> started all node programs in 1.558 seconds.
+Charm++> Running in non-SMP mode: numPes 5
+Converse/Charm++ Commit ID: v6.8.2-0-g26d4bd8e9
+Warning> Randomization of virtual memory (ASLR) is turned on in the kernel, thread migration may not work! Run 'echo 0 > /proc/sys/kernel/randomize_va_space' as root to disable it, or try running with '+isomalloc_sync'.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 5 unique compute nodes (8-way SMP).
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] GreedyLB created
+Running Jacobi on 5 processors with (10,10) elements
+PROC#0 Calling LBD --------------------- iteration=0
+PROC#4 Calling LBD --------------------- iteration=50
+PROC#0 Calling LBD --------------------- iteration=100
+PROC#2 Calling LBD --------------------- iteration=150
+PROC#4 Calling LBD --------------------- iteration=200
+PROC#1 Calling LBD --------------------- iteration=250
+PROC#3 Calling LBD --------------------- iteration=300
+PROC#2 Calling LBD --------------------- iteration=350
+PROC#4 Calling LBD --------------------- iteration=400
+PROC#0 Calling LBD --------------------- iteration=450
+PROC#1 Calling LBD --------------------- iteration=500
+PROC#4 Calling LBD --------------------- iteration=550
+PROC#1 Calling LBD --------------------- iteration=600
+PROC#4 Calling LBD --------------------- iteration=650
+PROC#0 Calling LBD --------------------- iteration=700
+PROC#3 Calling LBD --------------------- iteration=750
+PROC#0 Calling LBD --------------------- iteration=800
+Load balancer invoking charmrun to handle reallocation on pe 0
+CharmLB> GreedyLB: PE [0] step 15 finished at 8.588088 duration 0.003694 s
+
+[0] Checkpoint starting in /home/takaoka/workdir
+Main's PUPer. 
+Checkpoint to disk finished in 0.778283s, sending out the cb...
+
+ 
+Charmrun> 3 Reallocated pes
+ 
+Charmrun> scalable start enabled. 
+ccs: 2
+ccs: Server IP = 192.168.3.0, Server port = 1234 $
+Charmrun> started all node programs in 0.005 seconds.
+Charm++> Running in non-SMP mode: numPes 3
+Converse/Charm++ Commit ID: v6.8.2-0-g26d4bd8e9
+Warning> Randomization of virtual memory (ASLR) is turned on in the kernel, thread migration may not work! Run 'echo 0 > /proc/sys/kernel/randomize_va_space' as root to disable it, or try running with '+isomalloc_sync'.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 3 unique compute nodes (8-way SMP).
+Charm++> cpu topology info is gathered in 0.009 seconds.
+Received 4 arguments: { |/home/takaoka/scheduler/scheduler/examples/charm-job-2/./jacobi2d| |200| |20| |5000| }
+Resuming Jacobi on 3 processors with (10,10) elements
+Main's MigCtor.
+Main's PUPer. 
+[0]CkRestartMain done. sending out callback.
+PROC#1 Calling LBD --------------------- iteration=850
+PROC#2 Calling LBD --------------------- iteration=900
+PROC#0 Calling LBD --------------------- iteration=950
+PROC#2 Calling LBD --------------------- iteration=1000
+PROC#1 Calling LBD --------------------- iteration=1050
+PROC#1 Calling LBD --------------------- iteration=1100
+PROC#2 Calling LBD --------------------- iteration=1150
+PROC#0 Calling LBD --------------------- iteration=1200
+PROC#2 Calling LBD --------------------- iteration=1250
+PROC#0 Calling LBD --------------------- iteration=1300
+PROC#1 Calling LBD --------------------- iteration=1350
+PROC#2 Calling LBD --------------------- iteration=1400
+PROC#0 Calling LBD --------------------- iteration=1450
+PROC#1 Calling LBD --------------------- iteration=1500
+PROC#0 Calling LBD --------------------- iteration=1550
+PROC#1 Calling LBD --------------------- iteration=1600
+PROC#2 Calling LBD --------------------- iteration=1650
+PROC#1 Calling LBD --------------------- iteration=1700
+PROC#0 Calling LBD --------------------- iteration=1750
+PROC#0 Calling LBD --------------------- iteration=1800
+PROC#1 Calling LBD --------------------- iteration=1850
+PROC#2 Calling LBD --------------------- iteration=1900
+PROC#2 Calling LBD --------------------- iteration=1950
+PROC#0 Calling LBD --------------------- iteration=2000
+PROC#0 Calling LBD --------------------- iteration=2050
+PROC#2 Calling LBD --------------------- iteration=2100
+PROC#2 Calling LBD --------------------- iteration=2150
+PROC#0 Calling LBD --------------------- iteration=2200
+PROC#2 Calling LBD --------------------- iteration=2250
+PROC#1 Calling LBD --------------------- iteration=2300
+PROC#0 Calling LBD --------------------- iteration=2350
+PROC#0 Calling LBD --------------------- iteration=2400
+PROC#0 Calling LBD --------------------- iteration=2450
+PROC#2 Calling LBD --------------------- iteration=2500
+PROC#2 Calling LBD --------------------- iteration=2550
+PROC#2 Calling LBD --------------------- iteration=2600
+PROC#2 Calling LBD --------------------- iteration=2650
+PROC#1 Calling LBD --------------------- iteration=2700
+PROC#0 Calling LBD --------------------- iteration=2750
+PROC#2 Calling LBD --------------------- iteration=2800
+PROC#1 Calling LBD --------------------- iteration=2850
+PROC#1 Calling LBD --------------------- iteration=2900
+PROC#0 Calling LBD --------------------- iteration=2950
+PROC#2 Calling LBD --------------------- iteration=3000
+PROC#2 Calling LBD --------------------- iteration=3050
+PROC#1 Calling LBD --------------------- iteration=3100
+PROC#2 Calling LBD --------------------- iteration=3150
+PROC#1 Calling LBD --------------------- iteration=3200
+PROC#1 Calling LBD --------------------- iteration=3250
+PROC#2 Calling LBD --------------------- iteration=3300
+PROC#0 Calling LBD --------------------- iteration=3350
+PROC#2 Calling LBD --------------------- iteration=3400
+PROC#2 Calling LBD --------------------- iteration=3450
+PROC#1 Calling LBD --------------------- iteration=3500
+PROC#2 Calling LBD --------------------- iteration=3550
+PROC#1 Calling LBD --------------------- iteration=3600
+PROC#2 Calling LBD --------------------- iteration=3650
+PROC#1 Calling LBD --------------------- iteration=3700
+PROC#2 Calling LBD --------------------- iteration=3750
+PROC#0 Calling LBD --------------------- iteration=3800
+PROC#2 Calling LBD --------------------- iteration=3850
+PROC#1 Calling LBD --------------------- iteration=3900
+PROC#0 Calling LBD --------------------- iteration=3950
+PROC#1 Calling LBD --------------------- iteration=4000
+PROC#0 Calling LBD --------------------- iteration=4050
+PROC#1 Calling LBD --------------------- iteration=4100
+PROC#1 Calling LBD --------------------- iteration=4150
+PROC#2 Calling LBD --------------------- iteration=4200
+Load balancer invoking charmrun to handle reallocation on pe 0
+CharmLB> CentralLB: PE [0] step 82 finished at 33.700731 duration 0.003028 s
+
+[0] Checkpoint starting in /home/takaoka/workdir
+Main's PUPer. 
+Checkpoint to disk finished in 0.982218s, sending out the cb...
+
+ 
+Charmrun> 5 Reallocated pes
+ 
+Charmrun> scalable start enabled. 
+ccs: 2
+ccs: Server IP = 192.168.3.0, Server port = 1234 $
+Charmrun> started all node programs in 1.511 seconds.
+Charm++> Running in non-SMP mode: numPes 5
+Converse/Charm++ Commit ID: v6.8.2-0-g26d4bd8e9
+Warning> Randomization of virtual memory (ASLR) is turned on in the kernel, thread migration may not work! Run 'echo 0 > /proc/sys/kernel/randomize_va_space' as root to disable it, or try running with '+isomalloc_sync'.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 5 unique compute nodes (8-way SMP).
+Charm++> cpu topology info is gathered in 0.009 seconds.
+Received 4 arguments: { |/home/takaoka/scheduler/scheduler/examples/charm-job-2/./jacobi2d| |200| |20| |5000| }
+Resuming Jacobi on 5 processors with (10,10) elements
+Main's MigCtor.
+Main's PUPer. 
+[0]CkRestartMain done. sending out callback.
+PROC#2 Calling LBD --------------------- iteration=4250
+PROC#3 Calling LBD --------------------- iteration=4300
+PROC#1 Calling LBD --------------------- iteration=4350
+PROC#0 Calling LBD --------------------- iteration=4400
+PROC#0 Calling LBD --------------------- iteration=4450
+PROC#4 Calling LBD --------------------- iteration=4500
+PROC#1 Calling LBD --------------------- iteration=4550
+PROC#0 Calling LBD --------------------- iteration=4600
+PROC#2 Calling LBD --------------------- iteration=4650
+PROC#4 Calling LBD --------------------- iteration=4700
+PROC#2 Calling LBD --------------------- iteration=4750
+PROC#4 Calling LBD --------------------- iteration=4800
+PROC#2 Calling LBD --------------------- iteration=4850
+PROC#4 Calling LBD --------------------- iteration=4900
+PROC#1 Calling LBD --------------------- iteration=4950
+Program Done! avg_it:0.001427
