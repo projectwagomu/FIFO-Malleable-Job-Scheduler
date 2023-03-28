@@ -58,12 +58,27 @@ This is done by running a third-party program for both of the runtimes mentionne
 These programs were copied from the CHARM++ samples in the case of CHARM++, or created by Kanzaki in the case of APGAS and are located in directory `middlelayer/shrink_expand` in a dedicated directory for each of them.
 
 
+## Limitations, Hard-coded environment variables
+
+A number of settings are hard-coded, including the port numbers used by programs to communicate etc.
+The most significant one are:
+
+1. the hosts that the scheduler operates on (see [`ScriptManager#L15`](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/scheduler/src/scheduler/ScriptManager.java#L15))
+2. the path to the external programs the middlelayer relies on (see [`middlelayer/Main.java` l35](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L35), [line ](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L55), [line 70](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L70), and [line 102](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L102))
+
+
+
 ## Compilation Instructions
 
 ```bash
 $ cd middlelayer
 $ ant jar
-$ cd ../scheduler
+$ cd shrink_expand
+$ cd apgas
+$ javac Client.java
+$ cd ../charm
+$ make                 # Requires Charm++ to be compiled and installed with elastic options on the system
+$ cd ../../../scheduler
 $ ant clean-build
 ```
 
