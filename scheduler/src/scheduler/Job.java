@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.net.Socket;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,8 +21,10 @@ public class Job extends Thread {
     public int maxNodes;
     public int numHost;
     public List<String> usingHosts;
+    public ScriptManager manager;
 
-    public Job(Path path) {
+    public Job(Path path, ScriptManager manager) {
+        this.manager = manager;
         this.scriptPath = path;
         this.scriptDir = path.getParent();
         try (BufferedReader reader = new BufferedReader(new FileReader(path.toString()))) {
@@ -48,7 +51,7 @@ public class Job extends Thread {
     }
 
     public boolean isExecutable() {
-        return this.minNodes <= ScriptManager.availableHosts.size();
+        return this.minNodes <= manager.availableHosts.size();
     }
 
     public void shrink(int decreasedNum) {
@@ -76,7 +79,7 @@ public class Job extends Thread {
 
         for (int i = 0; i < unusedHosts.length; i++) {
             usingHosts.remove(unusedHosts[i]);
-            ScriptManager.availableHosts.add(unusedHosts[i]);
+            manager.availableHosts.add(unusedHosts[i]);
         }
 
         this.numHost = usingHosts.size();
@@ -89,7 +92,7 @@ public class Job extends Thread {
         };
         List<String> newHosts = new ArrayList<>();
         for (int i=0; i<increasedNum; i++) {
-            String h = ScriptManager.availableHosts.poll();
+            String h = manager.availableHosts.poll();
             this.usingHosts.add(h);
             newHosts.add(h);
         }
@@ -112,18 +115,18 @@ public class Job extends Thread {
     }
 
     public void run() {
-        System.out.println("available hosts: " + ScriptManager.availableHosts);
+        System.out.println("available hosts: " + manager.availableHosts);
         System.out.println("run " + this);
         this.numHost = this.maxNodes;
-        while(this.numHost > ScriptManager.availableHosts.size()) {
+        while(this.numHost > manager.availableHosts.size()) {
             this.numHost--;
         }
         this.usingHosts = new ArrayList<>();
         for (int i = 0; i < this.numHost; i++) {
-            this.usingHosts.add(ScriptManager.availableHosts.poll());
+            this.usingHosts.add(manager.availableHosts.poll());
         }
         System.out.println("using hosts: " + this.usingHosts);
-        System.out.println("available hosts: " + ScriptManager.availableHosts); 
+        System.out.println("available hosts: " + manager.availableHosts); 
         String nodeFile = "nodeFile";
         File file = new File(this.scriptDir + "/" + nodeFile);
         try {
@@ -154,9 +157,10 @@ public class Job extends Thread {
             "SCRIPT_DIR=" + this.scriptDir,
             this.scriptPath.toString(),
         };
+        System.out.println(Arrays.toString(cmd));
         try {
             Process process = Runtime.getRuntime().exec(cmd);
-            ScriptManager.runningJobs.add(this);
+            manager.runningJobs.add(this);
             BufferedReader reader = new BufferedReader(new
                 InputStreamReader(process.getInputStream()));
             StringBuilder output = new StringBuilder();
@@ -166,15 +170,16 @@ public class Job extends Thread {
             }
             reader.close();
             PrintWriter writer = new PrintWriter(this.scriptDir + "/result.txt");
+            System.out.println(output.toString());
             writer.print(output.toString());
             writer.close();
             System.out.println("Done: " + this);
-            ScriptManager.runningJobs.remove(this);
+            manager.runningJobs.remove(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.usingHosts.forEach(h -> ScriptManager.availableHosts.add(h));
-        System.out.println("available hosts: " + ScriptManager.availableHosts);
+        this.usingHosts.forEach(h -> manager.availableHosts.add(h));
+        System.out.println("available hosts: " + manager.availableHosts);
         file.delete();
     }
 

@@ -89,6 +89,7 @@ $ javac Qsub.java
 
 First, both the `scheduler` and the `middleware` need to be running in the background.
 This can be done by running the `$ ant run` target in their respective directories.
+Before running the `scheduler`, the hosts must be defined in the `build.xml`!
 
 Then, scripts need to be submitted using the `Qsub` Java program.
 Script [/scheduler/examples/submit.sh](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/scheduler/examples/submit.sh) has a number of jobs pre-prepared for submission based on the scripts contained [in the various example directories](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/tree/master/scheduler/examples).

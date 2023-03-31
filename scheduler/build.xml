@@ -24,7 +24,13 @@
   </target>
 
   <target name="run" depends="jar">
-    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
+<!--      Give me your hosts here!-->
+      <arg value="its-cs111"/>
+      <arg value="its-cs113"/>
+      <arg value="its-cs114"/>
+      <arg value="its-cs115"/>
+    </java>
   </target>
 
   <target name="clean-build" depends="clean,jar"/>

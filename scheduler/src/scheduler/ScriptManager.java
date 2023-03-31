@@ -7,12 +7,14 @@ import java.util.Queue;
 
 public class ScriptManager extends Thread {
 
-  public static Queue<String> availableHosts = new ArrayDeque<>();
+  public Queue<String> availableHosts;
   public static List<Job> runningJobs = new ArrayList<>();
-  static {
-    for (int i = 0; i < 12; i++) {
-      // piccolo00 ~ piccolo11
-      availableHosts.add(String.format("piccolo%02d", i));
+
+  public ScriptManager(String[] args) {
+    availableHosts = new ArrayDeque<>();
+    for (final String s : args) {
+      availableHosts.add(s);
+      System.out.println("added host " + s);
     }
   }
 

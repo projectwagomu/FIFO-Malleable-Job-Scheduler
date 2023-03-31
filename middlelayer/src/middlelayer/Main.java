@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Main {
+  static String workingDir = System.getProperty("user.dir");
   public static void main(String[] args) {
+    System.out.println("workingDir: " + workingDir);
     try {
       ServerSocket serverSocket = new ServerSocket(8081);
       while(true) {
@@ -32,7 +34,7 @@ public class Main {
           newHosts = params[4].replaceAll("[\\[\\]\\s]", "").split(",");
           ProcessBuilder builder;
           if (jobType.equals("apgas")) {
-            builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp /home/takaoka/scheduler/middlelayer/shrink_expand/apgas/ Client expand", String.valueOf(newHosts.length), String.join(" ", newHosts));
+            builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp " + workingDir "/shrink_expand/apgas/ Client expand", String.valueOf(newHosts.length), String.join(" ", newHosts));
           } else {
             String nodeFile = "nodeFile";
             File file = new File(scriptDir + "/" + nodeFile);
@@ -52,7 +54,7 @@ public class Main {
             } catch (IOException e) {
               e.printStackTrace();
             }
-            builder = new ProcessBuilder("/home/takaoka/scheduler/middlelayer/shrink_expand/charm/client", currentHosts[0], "1234", String.valueOf(currentHosts.length-1), String.valueOf(currentHosts.length-1+newHosts.length));
+            builder = new ProcessBuilder(workingDir + "/shrink_expand/charm/client", currentHosts[0], "1234", String.valueOf(currentHosts.length-1), String.valueOf(currentHosts.length-1+newHosts.length));
           }
           Process process = builder.start();
           BufferedReader reader = new BufferedReader(new
@@ -67,7 +69,7 @@ public class Main {
           decreasedNum = Integer.parseInt(params[4]);
           if (jobType.equals("apgas")) {
             List<String> unusedHosts = new ArrayList<>();
-            ProcessBuilder builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp /home/takaoka/scheduler/middlelayer/shrink_expand/apgas/ Client shrink", String.valueOf(decreasedNum));
+            ProcessBuilder builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp " + workingDir + "/shrink_expand/apgas/ Client shrink", String.valueOf(decreasedNum));
             Process process = builder.start();
             BufferedReader reader = new BufferedReader(new
             InputStreamReader(process.getInputStream()));
@@ -99,7 +101,7 @@ public class Main {
             } catch (IOException e) {
               e.printStackTrace();
             }
-            ProcessBuilder builder = new ProcessBuilder("/home/takaoka/scheduler/middlelayer/shrink_expand/charm/client", currentHosts[0], "1234", String.valueOf(currentHosts.length-1), String.valueOf(currentHosts.length-1-decreasedNum));
+            ProcessBuilder builder = new ProcessBuilder(workingDir + "/shrink_expand/charm/client", currentHosts[0], "1234", String.valueOf(currentHosts.length-1), String.valueOf(currentHosts.length-1-decreasedNum));
             Process process = builder.start();
             BufferedReader reader = new BufferedReader(new
             InputStreamReader(process.getInputStream()));

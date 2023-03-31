@@ -9,6 +9,11 @@ import java.nio.file.Path;
 
 public class ScriptReceiver extends Thread {
 
+  ScriptManager manager;
+  public ScriptReceiver(ScriptManager manager) {
+    this.manager = manager;
+  }
+
   public void run() {
     try {
       ServerSocket serverSocket = new ServerSocket(8080);
@@ -17,7 +22,7 @@ public class ScriptReceiver extends Thread {
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
         String script = in.readLine();
-        Scheduler.jobQueue.add(new Job(Path.of(script)));
+        Scheduler.jobQueue.add(new Job(Path.of(script), manager));
         out.println(script + " received.");
       }
     } catch (Exception e) {
