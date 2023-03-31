@@ -34,7 +34,7 @@ public class Main {
           newHosts = params[4].replaceAll("[\\[\\]\\s]", "").split(",");
           ProcessBuilder builder;
           if (jobType.equals("apgas")) {
-            builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp " + workingDir "/shrink_expand/apgas/ Client expand", String.valueOf(newHosts.length), String.join(" ", newHosts));
+            builder = new ProcessBuilder("ssh", currentHosts[0], "java -cp " + workingDir + "/shrink_expand/apgas/ Client expand", String.valueOf(newHosts.length), String.join(" ", newHosts));
           } else {
             String nodeFile = "nodeFile";
             File file = new File(scriptDir + "/" + nodeFile);
