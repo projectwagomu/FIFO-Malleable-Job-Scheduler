@@ -6,7 +6,7 @@
 
 currentDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-java -cp ${currentDir}/../../../../posner-evolving-glb/build/libs/posner-evolving-glb-1.0-SNAPSHOT-all.jar
+java -cp ${currentDir}/../../../../posner-evolving-glb/build/libs/posner-evolving-glb-1.0-SNAPSHOT-all.jar \
  -Dapgas.places=$NODES\
  -Dapgas.threads=8\
  -Dapgas.immediate.threads=4\
