@@ -156,6 +156,7 @@ public class Job extends Thread {
             "NODE_FILE=" + file,
             "SCRIPT_DIR=" + this.scriptDir,
             this.scriptPath.toString(),
+            ">", "_stdout.txt", "2>", "_stderr.txt"
         };
         System.out.println(Arrays.toString(cmd));
         try {
@@ -169,10 +170,10 @@ public class Job extends Thread {
               output.append(line + "\n");
             }
             reader.close();
-            PrintWriter writer = new PrintWriter(this.scriptDir + "/result.txt");
+//            PrintWriter writer = new PrintWriter(this.scriptDir + "/result.txt");
             System.out.println(output.toString());
-            writer.print(output.toString());
-            writer.close();
+//            writer.print(output.toString());
+//            writer.close();
             System.out.println("Done: " + this);
             manager.runningJobs.remove(this);
         } catch (IOException e) {
