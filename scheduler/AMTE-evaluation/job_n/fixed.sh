@@ -1,0 +1,1 @@
+../malleable_6-12-rigid.sh
