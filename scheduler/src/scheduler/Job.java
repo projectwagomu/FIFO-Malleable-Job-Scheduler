@@ -156,7 +156,7 @@ public class Job extends Thread {
             "NODE_FILE=" + file,
             "SCRIPT_DIR=" + this.scriptDir,
             this.scriptPath.toString(),
-            ">", "_stdout.txt", "2>", "_stderr.txt"
+//            ">", "_stdout.txt", "2>", "_stderr.txt"
         };
         System.out.println(Arrays.toString(cmd));
         try {

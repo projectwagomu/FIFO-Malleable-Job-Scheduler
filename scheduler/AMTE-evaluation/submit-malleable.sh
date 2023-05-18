@@ -8,10 +8,10 @@ do
     if [ -f $jobs/malleable.sh ]
     then
         echo "Submitting malleable job ${jobs}"
-        java Qsub $jobs/malleable.sh 2> /dev/null > /dev/null
+        java Qsub $PWD/$jobs/malleable.sh 2> /dev/null > /dev/null
     else
         echo "Submitting fixed     job ${jobs}"
-        java Qsub $jobs/fixed.sh 2> /dev/null > /dev/null
+        java Qsub $PWD/$jobs/fixed.sh 2> /dev/null > /dev/null
     fi
 done
 

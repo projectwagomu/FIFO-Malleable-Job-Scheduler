@@ -1,7 +1,7 @@
 #!/bin/bash
 #JOB_TYPE apgas
 #JOB_CLASS malleable
-#MIN_NODES 2
+#MIN_NODES 6
 #MAX_NODES 12
 
 # currentDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
