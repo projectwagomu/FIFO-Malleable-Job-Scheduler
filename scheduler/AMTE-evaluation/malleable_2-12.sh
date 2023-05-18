@@ -13,5 +13,7 @@ java -cp "/home/patrick/apgas-for-java/lib/*" \
  -Dglb.multiworker.workerperplace=2\
  -Dapgas.elastic=malleable \
  -Dapgas.hostfile=$NODE_FILE\
- -Dglb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy\
  handist.glb.examples.nqueens.StartNQueens -n 15 -t 11
+
+#  -Dglb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy\
+
