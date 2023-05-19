@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.Queue;
 
 public class ScriptManager extends Thread {
-
+	
 	public Queue<String> availableHosts;
 	public volatile boolean terminateFlag = false;
 	public static List<Job> runningJobs = new ArrayList<>();
+
+	public Logger log;
 
 	public ScriptManager(String[] args) {
 		availableHosts = new ArrayDeque<>();
@@ -17,15 +19,26 @@ public class ScriptManager extends Thread {
 			availableHosts.add(s);
 			System.out.println("added host " + s);
 		}
+		try {
+			log = new Logger();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void run() {
 		int noJobsRunningNoQueue = 0;
+		boolean firstJobs = true;
 		while (noJobsRunningNoQueue < 5) {
 			try {
 				Thread.sleep(5000);
 				System.out.println("running jobs: " + runningJobs);
 				if (Scheduler.jobQueue.size() > 0) {
+					
+					if (firstJobs) { // Set the start timer for the logger when jobs are first received
+						log.jobsSubmitted();
+						firstJobs=false;
+					}
 					System.out.println("job queue: " + Scheduler.jobQueue);
 					Job job = Scheduler.jobQueue.poll();
 					while (!job.isExecutable()) {
@@ -48,7 +61,7 @@ public class ScriptManager extends Thread {
 					}
 					System.out.println("job queue: " + Scheduler.jobQueue);
 				}
-				
+
 				if (runningJobs.isEmpty() && Scheduler.jobQueue.isEmpty()) {
 					noJobsRunningNoQueue++;
 				}
@@ -57,6 +70,7 @@ public class ScriptManager extends Thread {
 			}
 		}
 		System.out.println("Script Manager did not receive any jobs for while and will now stop");
+		log.finished();
 		terminateFlag = true; // Used by the ScriptReceiver to stop
 	}
 

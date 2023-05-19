@@ -77,6 +77,8 @@ public class Job extends Thread {
             e.printStackTrace();
         }
 
+        manager.log.jobShrunk(scriptDir.toString(), Arrays.asList(unusedHosts));
+        
         for (int i = 0; i < unusedHosts.length; i++) {
             usingHosts.remove(unusedHosts[i]);
             manager.availableHosts.add(unusedHosts[i]);
@@ -97,6 +99,9 @@ public class Job extends Thread {
             newHosts.add(h);
         }
 
+        // Inform the logger of the expansion
+        manager.log.jobExpand(scriptDir.toString(), newHosts);
+        
         try {
             Socket socket = new Socket("localhost", 8081);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -161,7 +166,7 @@ public class Job extends Thread {
         System.out.println(Arrays.toString(cmd));
         try {
             Process process = Runtime.getRuntime().exec(cmd);
-            manager.runningJobs.add(this);
+            ScriptManager.runningJobs.add(this);
             BufferedReader reader = new BufferedReader(new
                 InputStreamReader(process.getInputStream()));
             StringBuilder output = new StringBuilder();
@@ -174,8 +179,10 @@ public class Job extends Thread {
 //            System.out.println(output.toString());
             writer.print(output.toString());
             writer.close();
+            // This job has officially completed
             System.out.println("Done: " + this);
-            manager.runningJobs.remove(this);
+            manager.log.jobTerminated(scriptDir.toString());
+            ScriptManager.runningJobs.remove(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
