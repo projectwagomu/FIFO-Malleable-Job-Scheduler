@@ -3,11 +3,13 @@ package scheduler;
 import java.util.List;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Queue;
 
 public class ScriptManager extends Thread {
 	
 	public Queue<String> availableHosts;
+	public HashSet<String> allHosts;
 	public volatile boolean terminateFlag = false;
 	public static List<Job> runningJobs = new ArrayList<>();
 
@@ -15,8 +17,11 @@ public class ScriptManager extends Thread {
 
 	public ScriptManager(String[] args) {
 		availableHosts = new ArrayDeque<>();
+		allHosts = new HashSet<>();
+		
 		for (final String s : args) {
 			availableHosts.add(s);
+			allHosts.add(s);
 			System.out.println("added host " + s);
 		}
 		try {

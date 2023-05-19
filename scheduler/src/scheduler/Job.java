@@ -60,14 +60,24 @@ public class Job extends Thread {
             currentHosts.add(h);
         };
         this.usingHosts.subList(this.usingHosts.size()-decreasedNum, this.usingHosts.size()).clear();
-        String[] unusedHosts = new String[decreasedNum];
+        //String[] unusedHosts = new String[decreasedNum];
+        ArrayList<String> releasedHosts = new ArrayList<>();
 
         try {
             Socket socket = new Socket("localhost", 8081);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println(this.scriptDir + ":" + "shrink" + ":" + this.jobType + ":" + currentHosts.toString() + ":" + String.valueOf(decreasedNum));
-            unusedHosts = in.readLine().replaceAll("[\\[\\]\\s]", "").split(","); 
+            String [] unusedHosts = in.readLine().replaceAll("[\\[\\]\\s]", "").split(","); 
+            
+            // Remove any hostname which does not belong to the list of host
+            // This avoids including connection error traces
+            for (String h : unusedHosts) {
+            	if (manager.allHosts.contains(h)) {
+                	releasedHosts.add(h);
+            	}
+            }
+            
             String response = in.readLine();
             if (response.equals("success")) {
                 System.out.println("shrink : " + this);
@@ -77,11 +87,11 @@ public class Job extends Thread {
             e.printStackTrace();
         }
 
-        manager.log.jobShrunk(scriptDir.toString(), Arrays.asList(unusedHosts));
+        manager.log.jobShrunk(scriptDir.toString(), releasedHosts);
         
-        for (int i = 0; i < unusedHosts.length; i++) {
-            usingHosts.remove(unusedHosts[i]);
-            manager.availableHosts.add(unusedHosts[i]);
+        for (String h : releasedHosts) {
+            usingHosts.remove(h);
+            manager.availableHosts.add(h);
         }
 
         this.numHost = usingHosts.size();
