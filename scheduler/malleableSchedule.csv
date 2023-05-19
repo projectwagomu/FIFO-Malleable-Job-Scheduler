@@ -1,0 +1,69 @@
+169216461;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_1; started; [piccolo00, piccolo01, piccolo02, piccolo03]
+5169804093;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_2; started; [piccolo04, piccolo05, piccolo06, piccolo07]
+10083955119;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_3; started; [piccolo08, piccolo09, piccolo10, piccolo11]
+21934149685;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_1; terminated
+25177575964;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_4; started; [piccolo00, piccolo01]
+26833999675;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_2; terminated
+30109124817;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_5; started; [piccolo02, piccolo03, piccolo04, piccolo05, piccolo06, piccolo07]
+46541223422;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_4; terminated
+51219668477;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_5; released; [piccolo04, piccolo05, piccolo06, piccolo07]
+56368658507;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_6; started; [piccolo00, piccolo01, piccolo04, piccolo05, piccolo06, piccolo07]
+177602687146;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_6; terminated
+181310936538;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_a; started; [piccolo00, piccolo01, piccolo04, piccolo05, piccolo06, piccolo07]
+185777674274;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_3; terminated
+202884968677;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_a; terminated
+206335146665;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_b; started; [piccolo08, piccolo09, piccolo10, piccolo11, piccolo00, piccolo01, piccolo04, piccolo05]
+228015186582;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_b; terminated
+231308837393;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_c; started; [piccolo06, piccolo07, piccolo08, piccolo09, piccolo10, piccolo11, piccolo00, piccolo01, piccolo04, piccolo05]
+243794077262;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_c; released; [piccolo00, piccolo01, piccolo04, piccolo05]
+248983204614;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_d; started; [piccolo00, piccolo01, piccolo04, piccolo05]
+270395730310;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_d; terminated
+355164786324;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_c; terminated
+358900446504;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_e; started; [piccolo00, piccolo01, piccolo04, piccolo05, piccolo06, piccolo07, piccolo08, piccolo09, piccolo10, piccolo11]
+369795327231;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_e; released; [piccolo08, piccolo09, piccolo10, piccolo11]
+374300019477;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_5; terminated
+374900371682;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_f; started; [piccolo08, piccolo09, piccolo10, piccolo11]
+396398821055;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_f; terminated
+399973881842;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_g; started; [piccolo02, piccolo03, piccolo08, piccolo09]
+421668734087;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_g; terminated
+424901915073;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_h; started; [piccolo10, piccolo11, piccolo02, piccolo03, piccolo08, piccolo09]
+479681176201;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_e; terminated
+479864833465;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_i; started; [piccolo00, piccolo01, piccolo04, piccolo05, piccolo06, piccolo07]
+487058779300;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_h; released; [piccolo08, piccolo09]
+492239199387;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_j; started; [piccolo08, piccolo09]
+501369893852;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_i; terminated
+502189177173;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_k; started; [piccolo00, piccolo01, piccolo04, piccolo05, piccolo06, piccolo07]
+577217055547;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_h; terminated
+582766978177;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_j; terminated
+589350050836;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_k; released; [piccolo06, piccolo07]
+594458111383;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_l; started; [piccolo10, piccolo11, piccolo02, piccolo03, piccolo08, piccolo09, piccolo06, piccolo07]
+616296117062;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_l; terminated
+619415413005;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_m; started; [piccolo10, piccolo11]
+624415205658;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_n; started; [piccolo02, piccolo03, piccolo08, piccolo09, piccolo06, piccolo07]
+638739809413;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_k; terminated
+640720571539;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_m; terminated
+746345968502;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_n; terminated
+749479362427;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_o; started; [piccolo00, piccolo01, piccolo04, piccolo05, piccolo10, piccolo11, piccolo02, piccolo03]
+754537217384;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_p; started; [piccolo08, piccolo09]
+771227031459;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_o; terminated
+774485342786;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_q; started; [piccolo06, piccolo07, piccolo00, piccolo01, piccolo04, piccolo05, piccolo10, piccolo11, piccolo02, piccolo03]
+776085334743;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_p; terminated
+779499316351;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_r; started; [piccolo08, piccolo09]
+790954219374;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_q; released; [piccolo10, piccolo11, piccolo02, piccolo03]
+796125309841;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_s; started; [piccolo10, piccolo11, piccolo02, piccolo03]
+817564401589;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_s; terminated
+821077959124;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_t; started; [piccolo10, piccolo11, piccolo02, piccolo03]
+899945977285;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_q; terminated
+901083996602;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_u; started; [piccolo06, piccolo07, piccolo00, piccolo01, piccolo04, piccolo05]
+922331628510;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_u; terminated
+926098326247;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_v; started; [piccolo06, piccolo07, piccolo00, piccolo01]
+931076596570;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_w; started; [piccolo04, piccolo05]
+947133080001;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_v; terminated
+997552056778;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_t; terminated
+1001101997147;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_x; started; [piccolo06, piccolo07, piccolo00, piccolo01, piccolo10, piccolo11, piccolo02, piccolo03]
+1022457548873;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_w; terminated
+1025963019599;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_r; expand; [piccolo04, piccolo05]
+1075925782795;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_r; terminated
+1076576883060;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_x; expand; [piccolo08, piccolo09]
+1092282137540;/home/patrick/scheduler/scheduler/AMTE-evaluation/job_x; terminated
+1111846134819; all jobs completed
