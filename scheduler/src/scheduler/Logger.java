@@ -24,27 +24,27 @@ public class Logger {
 	
 	public synchronized void jobStarted(String jobName, List<String> hosts) {
 		long time = System.nanoTime() - startStamp;
-		writer.print(time + ";" + jobName + "; started; " + hosts);
+		writer.println(time + ";" + jobName + "; started; " + hosts);
 	}
 	
 	public synchronized void jobShrunk(String jobName, List<String> releasedHosts) {
 		long time = System.nanoTime() - startStamp;
-		writer.print(time + ";" + jobName + "; released; " + releasedHosts);
+		writer.println(time + ";" + jobName + "; released; " + releasedHosts);
 	}
 	
 	public synchronized void jobExpand(String jobName, List<String> additionalHosts) {
 		long time = System.nanoTime() - startStamp;
-		writer.print(time + ";" + jobName + "; expand; " + additionalHosts);
+		writer.println(time + ";" + jobName + "; expand; " + additionalHosts);
 	}
 	
 	public synchronized void jobTerminated(String jobName) {
 		long time = System.nanoTime() - startStamp;
-		writer.print(time + ";" + jobName + "; terminated");
+		writer.println(time + ";" + jobName + "; terminated");
 	}
 	
 	public void finished() {
 		long time = System.nanoTime() - startStamp;
-		writer.print(time + "; all jobs completed");
+		writer.println(time + "; all jobs completed");
 		writer.flush();
 		writer.close();
 	}
