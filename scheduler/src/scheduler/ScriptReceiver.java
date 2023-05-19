@@ -17,7 +17,7 @@ public class ScriptReceiver extends Thread {
   public void run() {
     try {
       ServerSocket serverSocket = new ServerSocket(8080);
-      while (true) {
+      while (! manager.terminateFlag) {
         Socket clientSocket = serverSocket.accept();
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
@@ -25,9 +25,10 @@ public class ScriptReceiver extends Thread {
         Scheduler.jobQueue.add(new Job(Path.of(script), manager));
         out.println(script + " received.");
       }
+      serverSocket.close();
     } catch (Exception e) {
       e.printStackTrace();
-    }
+    } 
   }
   
 }
