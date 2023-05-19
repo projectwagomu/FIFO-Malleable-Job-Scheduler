@@ -170,10 +170,10 @@ public class Job extends Thread {
               output.append(line + "\n");
             }
             reader.close();
-//            PrintWriter writer = new PrintWriter(this.scriptDir + "/result.txt");
-            System.out.println(output.toString());
-//            writer.print(output.toString());
-//            writer.close();
+            PrintWriter writer = new PrintWriter(this.scriptDir + "/result.txt");
+//            System.out.println(output.toString());
+            writer.print(output.toString());
+            writer.close();
             System.out.println("Done: " + this);
             manager.runningJobs.remove(this);
         } catch (IOException e) {
