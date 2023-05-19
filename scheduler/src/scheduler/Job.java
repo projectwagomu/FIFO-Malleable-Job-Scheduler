@@ -164,6 +164,10 @@ public class Job extends Thread {
 //            ">", "_stdout.txt", "2>", "_stderr.txt"
         };
         System.out.println(Arrays.toString(cmd));
+        
+        // Log the start of the execution
+        manager.log.jobStarted(scriptDir.toString(), usingHosts);
+        
         try {
             Process process = Runtime.getRuntime().exec(cmd);
             ScriptManager.runningJobs.add(this);
