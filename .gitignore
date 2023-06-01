@@ -6,3 +6,4 @@ middlelayer/build/
 middlelayer/shrink_expand/
 
 .idea/
+/bin/
