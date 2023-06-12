@@ -1,0 +1,1 @@
+../malleable_4-8-rigid.sh

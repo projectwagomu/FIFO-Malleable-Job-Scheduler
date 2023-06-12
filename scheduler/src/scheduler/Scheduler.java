@@ -5,13 +5,20 @@ import java.util.Queue;
 
 public class Scheduler {
 
-  public static Queue<Job> jobQueue = new ArrayDeque<>();
-  public static void main(String[] args) {
-    ScriptReceiver receiver = new ScriptReceiver();
-    ScriptManager manager = new ScriptManager();
+	public static Queue<Job> jobQueue = new ArrayDeque<>();
 
-    receiver.start();
-    manager.start();
-  }
+	public static void main(String[] args) {
+
+		if (args == null || args.length == 0) {
+			System.out.println("needed hosts as args");
+			return;
+		}
+
+		final ScriptManager manager = new ScriptManager(args);
+		final ScriptReceiver receiver = new ScriptReceiver(manager);
+
+		receiver.start();
+		manager.start();
+	}
 
 }

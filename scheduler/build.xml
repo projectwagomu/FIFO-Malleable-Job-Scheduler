@@ -24,11 +24,25 @@
   </target>
 
   <target name="run" depends="jar">
-    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
+<!--      Give me your hosts here!-->
+      <arg value="piccolo00"/>
+      <arg value="piccolo01"/>
+      <arg value="piccolo02"/>
+      <arg value="piccolo03"/>
+      <arg value="piccolo04"/>
+      <arg value="piccolo05"/>
+      <arg value="piccolo06"/>
+      <arg value="piccolo07"/>
+      <arg value="piccolo08"/>
+      <arg value="piccolo09"/>
+      <arg value="piccolo10"/>
+      <arg value="piccolo11"/>
+    </java>
   </target>
 
   <target name="clean-build" depends="clean,jar"/>
 
   <target name="main" depends="clean,run"/>
-
 </project>
+
