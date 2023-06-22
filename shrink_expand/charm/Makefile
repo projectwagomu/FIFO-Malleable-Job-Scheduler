@@ -1,5 +1,5 @@
 -include ../../common.mk
-CHARMC = ../../../charm/bin/charmc
+CHARMC = charmc
 
 all: client
 

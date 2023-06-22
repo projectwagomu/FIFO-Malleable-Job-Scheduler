@@ -7,3 +7,5 @@ middlelayer/shrink_expand/
 
 .idea/
 /bin/
+build/
+.*
