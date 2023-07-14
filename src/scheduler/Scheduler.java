@@ -1,5 +1,6 @@
 package scheduler;
 
+import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -13,8 +14,13 @@ public class Scheduler {
 			System.out.println("needed hosts as args");
 			return;
 		}
-
-		final ScriptManager manager = new ScriptManager(args);
+		ScriptManager manager = null;
+		try {
+			manager = new ScriptManager(args[0]);
+		} catch (IOException e) {
+			System.err.println("Error while trying to open file " + args[0] + ", quiting");
+			return;
+		}
 		final ScriptReceiver receiver = new ScriptReceiver(manager);
 
 		receiver.start();

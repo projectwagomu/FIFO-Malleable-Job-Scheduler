@@ -1,5 +1,9 @@
 package scheduler;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,15 +19,21 @@ public class ScriptManager extends Thread {
 
 	public volatile boolean terminateFlag = false;
 
-	public ScriptManager(String[] args) {
+	public ScriptManager(String hostfilename) throws IOException {
 		availableHosts = new ArrayDeque<>();
 		allHosts = new HashSet<>();
 
-		for (final String s : args) {
-			availableHosts.add(s);
-			allHosts.add(s);
-			System.out.println("added host " + s);
+		// Open the file given as argument
+		File hostfile = new File(hostfilename);
+		FileReader fr = new FileReader(hostfile);
+		BufferedReader br = new BufferedReader(fr);
+		String host;
+		while ((host = br.readLine()) != null) {
+			availableHosts.add(host);
+			allHosts.add(host);
+			System.out.println("added host " + host);
 		}
+		br.close();
 		try {
 			log = new Logger();
 		} catch (final Exception e) {
