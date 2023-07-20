@@ -4,6 +4,7 @@
 #MIN_NODES 4
 #MAX_NODES 4
 
-#cd $SCRIPT_DIR
-mpirun -n $NODES --hostfile $NODE_FILE /home/patrick/scheduler/scheduler/AMTE-evaluation/main
+
+cd ${SCRIPT_DIR}
+mpirun -n $NODES --hostfile $NODE_FILE ../../job_mpi/a.out
 

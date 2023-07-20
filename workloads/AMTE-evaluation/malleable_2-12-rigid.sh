@@ -5,8 +5,8 @@
 #MAX_NODES 6
 
 # currentDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-java -cp "/home/patrick/apgas-for-java/lib/*" \
+cd ${SCRIPT_DIR}
+java -cp "../../job_apgas/lifelineglb/target/*" \
  -Dapgas.places=$NODES\
  -Dapgas.threads=8\
  -Dapgas.immediate.threads=4\
