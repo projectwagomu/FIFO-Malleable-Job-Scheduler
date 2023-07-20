@@ -24,7 +24,8 @@ public class Scheduler {
 		final ScriptReceiver receiver = new ScriptReceiver(manager);
 
 		receiver.start();
-		manager.start();
+		manager.run(); // Automatically returns after a while without any submissions
+		System.exit(0);
 	}
 
 }
