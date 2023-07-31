@@ -1,12 +1,14 @@
 #!/bin/bash
 #JOB_TYPE apgas
 #JOB_CLASS malleable
-#MIN_NODES 1
-#MAX_NODES 2
+#MIN_NODES 2
+#MAX_NODES 4
 
-currentDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd ${SCRIPT_DIR}
 
-java -cp ${currentDir}/../../../../posner-evolving-glb/build/libs/posner-evolving-glb-1.0-SNAPSHOT-all.jar \
+pwd
+
+java -cp "../../job_apgas/lifelineglb/target/*" \
  -Dapgas.places=$NODES\
  -Dapgas.threads=8\
  -Dapgas.immediate.threads=4\
@@ -14,11 +16,12 @@ java -cp ${currentDir}/../../../../posner-evolving-glb/build/libs/posner-evolvin
  -Dapgas.consoleprinter=true\
  -Dapgas.resilient=true\
  -Dapgas.hostfile=$NODE_FILE\
- -Dglb.multiworker.lifelinestrategy=glb.multiworker.lifeline.MyHypercubeStrategy\
+ -Dglb.multiworker.lifelinestrategy=handist.glb.multiworker.lifeline.ConfigurableHypercubeStrategy\
  -Dglb.multiworker.workerperplace=2\
  -Dglb.multiworker.benchmarkrepetitions=1\
- -Dglb.multiworker.malleability=true\
- -Dglb.multiworker.malleability.add=true\
  -Dglb.multiworker.n=1\
  -Dglb.multiworker.w=1\
- glb.examples.syntheticBenchmark.StartSynthetic -b 0 -dynamic -g 45000 -t 6000 -u 20
+ -Dapgas.elastic=malleable\
+ -Dmalleable_scheduler_ip=localhost \
+ -Dmalleable_scheduler_port=8080 \
+ handist.glb.examples.syntheticBenchmark.StartSynthetic -b 0 -dynamic -g 45000 -t 6000 -u 20
