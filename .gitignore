@@ -2,9 +2,9 @@ scheduler/build/
 scheduler/lib/
 scheduler/examples/Qsub.class
 !/scheduler/examples/Qsub.java
+shrink_expand/apgas/Client.class
 middlelayer/build/
 middlelayer/shrink_expand/
-
 .idea/
 /bin/
 build/
