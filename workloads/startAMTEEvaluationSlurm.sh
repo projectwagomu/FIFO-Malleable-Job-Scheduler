@@ -30,13 +30,14 @@ tobeadded=$(echo "$allhosts" | grep -v "$thishost")
 
 echo "$tobeadded" > ${HOME}/scheduler/workloads/hostfile.txt
 
-
+${HOME}/scheduler/workloads/launchMiddlelayer.sh &
+middlepid=$!
+sleep 1
 ${HOME}/scheduler/workloads/launchScheduler.sh &
 schedulerpid=$!
 sleep 1
-${HOME}/scheduler/workloads/launchMiddlelayer.sh &
-sleep 1
 ${HOME}/scheduler/workloads/AMTE-evaluation/submit-malleable.sh
 wait $schedulerpid
+kill -9 $middlepid
 echo "slurm done"
 #TODO scheduler_log should be unique per run, e.g., by containing the job id
