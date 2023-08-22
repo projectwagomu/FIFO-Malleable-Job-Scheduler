@@ -2,7 +2,7 @@
 
 This project contains the source files to buils a FIFO malleable scheduler. The scheduler accepts job scripts in a format similar to actual batch job schedulers.
 
-## Directories `src` and `shrink_expand`
+## Directories [src](src) and [shrink_expand](shrink_expand)
 
 There are 2 components present in this project:
 
@@ -44,7 +44,7 @@ cd $SCRIPT_DIR
 ./charmrun +p$NODES ./jacobi2d 200 20 5000 +balancer GreedyLB ++nodelist $NODE_FILE +shrinkexpand_basedir /home/user/mycharmprograms ++server ++server-port 1234
 ```
 
-### 2. the middelayer
+### 2. The middelayer
 
 This middlelayer is used as an intermediary by the scheduler to send shrink/grow messages to running malleable programs.
 Currently, there are two types of malleable jobs supported:
@@ -56,7 +56,11 @@ This is done by running a third-party program for both of the runtimes mentionne
 
 These programs were copied from the CHARM++ samples in the case of CHARM++, or created by Kanzaki in the case of APGAS and are located in directory `src/middlelayer/shrink_expand` in a dedicated directory for each of them.
 
-## Directory `workloads`
+### Compiling
+
+Both the scheduler and the middlelayer can be automatically compiled using the [`compile.sh`](compile.sh) script provided.
+
+## Directory [workloads](workloads)
 This directory contains:
 
 - two programs compatible with the scheduler
@@ -64,7 +68,7 @@ This directory contains:
 
 ### Compiling the programs
 
-#### Directory `job_apgas`
+#### Directory [job_apgas](workloads/job_apgas)
 
 This directory actually contains multiple programs based on the malleable lifeline-based global load balancer. The necessary sources are downloaded as git submodules and compiled automatically using the [`compile.sh`](workloads/job_apgas/compile.sh) script provided.
 
@@ -72,7 +76,7 @@ More details about the implementation can be found in the following two reposito
 - https://github.com/projectwagomu/apgas
 - https://github.com/projectwagomu/lifelineglb
 
-#### Directory `job_mpi`
+#### Directory [job_mpi](workloads/job_mpi)
 
 This directory contains a dummy MPI program [`main.c`](workloads/job_mpi/main.c) whose execution lasts for 25 seconds.
 MPI needs to be installed on the host to be able to compile the program using the provided [`compile.sh`](workloads/job_mpi/compile.sh) convenience script.
@@ -89,7 +93,7 @@ It is assumed all these hosts can be reached through password-less SSH connectio
 The batches provided here rely on distributed programs that are provided in the [job_mpi](workloads/job_mpi) and [job_apgas](workloads/job_apgas) directories.
 The MPI job includes a basic `main.c` program, while the APGAS program is included as git submodules downloading the contents of repositories [projectwagomu/apgas](https://github.com/projectwagomu/apgas) and [projectwagomu/lifelineglb](https://github.com/projectwagomu/lifelineglb). These programs need to be compiled before they batches provided here can be used successfully (see above).
 
-#### Directory `examples`
+#### Directory [examples](workloads/examples)
 
 This batch is meant to be launched with a cluster containing 4 computational hosts to demonstrate two malleable changes in allotment.
 This batch contains two malleable jobs that can be submitted through the provided script [workloads/examples/submit.sh](workloads/examples/submit.sh).
@@ -98,7 +102,7 @@ A gap of 5 seconds separates the submission of the first and the second job.
 This makes the scheduler reduce the first job's allotment from the full 4 nodes to allow the second job to start executing.
 When either of the programs completes execution, the freed nodes are then allocated to the remaining job until its completion.
 
-#### Directory `AMTE-evaluation`
+#### Directory [AMTE-evaluation](workloads/AMTE-evaluation)
 
 This batch was used as the basis for our evaluation in our article _Malleable APGAS Programs and their Support in Batch Job Schedulers_.
 There are two batches present in this directory:
