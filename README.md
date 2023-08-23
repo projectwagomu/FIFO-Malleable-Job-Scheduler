@@ -1,53 +1,39 @@
 # Scheduler
 
-This project contains the source files to buils a FIFO malleable scheduler. 
-The scheduler accepts job scripts in a format similar to actual batch job schedulers.
+This project contains:
+- a FIFO malleable **scheduler** as well as some workloads in directory `src`
+- external programs, the **middlelayer**, used to communicate with running malleable programs to transmit shrink/grow orders from the scheduler in directory ``shrink_expand`
+- some example programs and batches with convenience scripts to submit them in bulk to the scheduler in directory `workloads`
 
 ## Project composition
 
-There are 2 components present in this project:
-### 1. The "scheduler"
+### Scheduler
 
 This program is responsible for receiving jobs from users and deciding when to launch them / on which hosts.
-This program listens on port 8080 to receive job scripts from users (see class `scheduler/ScriptReceiver`). 
-Programs can be submitted through the `Qsub` Java program like so: `java Qsub /home/user/scheduler/examples/job-dir-1/script.sh`. 
+This program listens on port 8080 to receive job scripts from users (see class `scheduler/ScriptReceiver`).
+Programs can be submitted through the `scheduler/Qsub` Java program like so: `java -cp scheduler.jar scheduler/Qsub /home/user/scheduler/examples/job-dir-1/script.sh`.
 The requested number of hosts/ limits on minimum-maximum number of hosts for malleablejobs are expected to be written inside the script.
-Below is an example of a **rigid** APGAS job:
-  
+Below is an example of a **rigid** MPI job:
+
 ```bash
 #!/bin/bash
-#JOB_TYPE apgas
 #JOB_CLASS rigid
+#JOB_TYPE mpi
 #MIN_NODES 4
-#MAX_NODES 6
+#MAX_NODES 4
 
-currentDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-cd ${currentDir}/../../../../posner-evolving-glb/bin
-
-java -cp .:${currentDir}/../../../../posner-evolving-glb/lib/\* \
- -Dapgas.places=$NODES\
- -Dapgas.threads=8\
- <...>
- -Dglb.multiworker.w=1\
- glb.examples.syntheticBenchmark.StartSynthetic -b 0 -dynamic -g 45000 -t 6000 -u 20
-```
-  
-Below is an example of a malleable Charm++ job:
-  
-```bash
-#!/bin/bash
-#JOB_TYPE charm
-#JOB_CLASS malleable
-#MIN_NODES 3
-#MAX_NODES 5
-
+# Program execution
 cd $SCRIPT_DIR
-./charmrun +p$NODES ./jacobi2d 200 20 5000 +balancer GreedyLB ++nodelist $NODE_FILE +shrinkexpand_basedir /home/takaoka/workdir ++server ++server-port 1234
+mpirun -n $NODES --hostfile $NODE_FILE a.out
 ```
 
-### 2. the "middelayer**
+When submitting malleable jobs, the `JOB_CLASS` variable must be set as `malleable`. The `JOB_TYPE` is used to indicate to the scheduler how to communicate with the program to send shrink of grow orders. Currently, two values are supported: `apgas` and `charm` based on the programs available in the *middlelayer* and implemented in class [`middlelayer/Main`](src/middlelayer/Main.java).
+The minimum and maximum number of processes can be specified using variables `MIN_NODES` and `MAX_NODES`.
+The `JOB_TYPE` variable is used to determine
 
-This middlelayer is used as an intermediary by the scheduler to send shrink/grow messages to running malleable programs. 
+### Middelayer
+
+This middlelayer is used as an intermediary by the scheduler to send shrink/grow messages to running malleable programs.
 Currently, there are two types of malleable jobs supported:
 - malleable APGAS for Java jobs
 - malleable CHARM++ jobs
@@ -55,45 +41,33 @@ Currently, there are two types of malleable jobs supported:
 The current implementation opens a socket on port 8081 and relays orders coming from the scheduler in the format required by the program.
 This is done by running a third-party program for both of the runtimes mentionned above.
 
-These programs were copied from the CHARM++ samples in the case of CHARM++, or created by Kanzaki in the case of APGAS and are located in directory `middlelayer/shrink_expand` in a dedicated directory for each of them.
+The program dealing with CHARM++ was copied from the samples of the CHARM++ repository. 
+The program dealing with APGAS for Java program was created by us. 
+Both are located in directory `shrink_expand` in a dedicated directory.
 
 
 ## Limitations, Hard-coded environment variables
 
 A number of settings are hard-coded, including the port numbers used by programs to communicate etc.
-The most significant one are:
+The most significant ones are:
+- the scheduler needs to be run on a host distinct from the ones used as computational host
+- a computational host cannot receive more than 1 process at a time
 
-1. the hosts that the scheduler operates on (see [`ScriptManager#L15`](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/scheduler/src/scheduler/ScriptManager.java#L15))
-2. the path to the external programs the middlelayer relies on (see [`middlelayer/Main.java` l35](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L35), [line ](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L55), [line 70](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L70), and [line 102](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/middlelayer/src/middlelayer/Main.java#L102))
-3. the path to the scripts in the `submit.sh` script used to load the scheduler with many jobs are all absolute paths (system dependant)
-
-
+This is due to the sockets used by the scheduler and the middlelayer to communicate between them, and the sockets used by malleable programs use the same port numbers. As a result, they cannot run on the same hosts. Also, the scheduler prepares an hostfile for the programs to use but does not currently handle cases where one hosts handles multiple processes (in MPI, `hostname slots=X` directives).
 
 ## Compilation Instructions
 
-```bash
-$ cd middlelayer
-$ ant jar
-$ cd shrink_expand
-$ cd apgas
-$ javac Client.java
-$ cd ../charm
-$ make                 # Requires Charm++ to be compiled and installed with elastic options on the system
-$ cd ../../../scheduler
-$ ant clean-build
-$ cd examples
-$ javac Qsub.java
-```
+The *scheduler* implemented in Java is compiled using `ant` and created a JAR in directory `build/jar`.
+The *middlelayer* can be compiled using a Makefile located in the `shrink_expand` directory.
 
-## Experiment setup
+A convenience script [`compile.sh`](compile.sh) is available to compile both the scheduler and the third-party programs used to communicate with malleable jobs.
 
-First, both the `scheduler` and the `middleware` need to be running in the background.
-This can be done by running the `$ ant run` target in their respective directories.
-Before running the `scheduler`, the hosts must be defined in the `build.xml`!
+To compile the programs used in the workloads that can be submitted to the scheduler, refer to the [`workloads/README.md`](`workloads/README.md`).
 
-Then, scripts need to be submitted using the `Qsub` Java program.
-Script [/scheduler/examples/submit.sh](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/blob/master/scheduler/examples/submit.sh) has a number of jobs pre-prepared for submission based on the scripts contained [in the various example directories](https://gittk.cs.kobe-u.ac.jp/elastic/scheduler/-/tree/master/scheduler/examples).
-You can load the scheduler by running `$ ./script.sh`. 
+## Authors
 
-
+- Patrick Finnerty
+- Takuma Kanzaki
+- Leo Takaoka
+- Jonas Posner
 
