@@ -1,9 +1,9 @@
-# Malleable Job Scheduler
+# FIFO Malleable Job Scheduler
 
 This project contains:
-- a FIFO malleable **scheduler** as well as some workloads in directory `src`
-- external programs, the **middlelayer**, used to communicate with running malleable programs to transmit shrink/grow orders from the scheduler in directory ``shrink_expand`
-- some example programs and batches with convenience scripts to submit them in bulk to the scheduler in directory `workloads`
+- a FIFO malleable **scheduler** in directory [src](src)
+- a **middlelayer** enabling communication with running malleable programs to transmit shrink/grow orders from the scheduler in directory [shrink_expand](shrink_expand)
+- some example programs and batches with convenience scripts to submit them in bulk to the scheduler in directory [workloads](workloads)
 
 
 ## Directories [src](src) and [shrink_expand](shrink_expand)
@@ -11,7 +11,7 @@ This project contains:
 ### Scheduler
 
 This program is responsible for receiving jobs from users and deciding when to launch them / on which hosts.
-This program listens on port 8080 to receive job scripts from users (see class `scheduler/ScriptReceiver`).
+This program listens on port `8080` to receive job scripts from users (see class `scheduler/ScriptReceiver`).
 Programs can be submitted through the `scheduler/Qsub` Java program like so: `java -cp scheduler.jar scheduler/Qsub /home/user/scheduler/examples/job-dir-1/script.sh`.
 The requested number of hosts/ limits on minimum-maximum number of hosts for malleablejobs are expected to be written inside the script.
 Below is an example of a **rigid** MPI job:
@@ -80,7 +80,7 @@ MPI needs to be installed on the host to be able to compile the program using th
 
 To launch a particular workload, the two scripts [`launchScheduler.sh`](workloads/launchScheduler.sh), and [`launchMiddlelayer.sh`](workloads/launchMiddlelayer.sh) should each be launched in a dedicated terminal on the host used to coordinate the computational hosts of the cluster.
 
-Note that script `launchScheduler` expects to find a file named `hostfile.txt` in which the hosts on which jobs can be scheduled should be listed.
+Note that [`launchScheduler.sh`](workloads/launchScheduler.sh) expects to find a file named `hostfile.txt` in which the hosts on which jobs can be scheduled should be listed.
 It is assumed all these hosts can be reached through password-less SSH connection.
 
 ### Submitting a batch
