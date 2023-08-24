@@ -1,0 +1,6 @@
+[submodule "workloads/job_apgas/apgas"]
+	path = workloads/job_apgas/apgas
+	url = https://github.com/projectwagomu/apgas
+[submodule "workloads/job_apgas/lifelineglb"]
+	path = workloads/job_apgas/lifelineglb
+	url = https://github.com/projectwagomu/lifelineglb
